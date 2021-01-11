@@ -6,7 +6,7 @@ Dans l'ordre d'analyse :
 > "data" est le dossier contenant les donnees enregistrees par les hobos lors des calibrations
 Le dossier Avenelles\raw_data\DESC_data\DATA_SENSOR\capteurs_pression\calibration\data\1_raw_data\modele doit etre suivi rigoureusement
 
-	> 1_raw_data contient les donnees telles qu'elles ont ete mesurees
+1_raw_data contient les donnees telles qu'elles ont ete mesurees
 		> CHAMBRE CLIMATIQUE
 		Creer un répertoire nommé pn°_capteur_annee_mois_jour_UT ex :pxxx_YYYY-mm-dd_calibUT
 			> Les fichiers de la chambre climatique se nomme : pn°_capteur_annee_mois_jour_UT_n° ex: p520_2016-08_UT
