@@ -45,24 +45,25 @@ Le dossier Avenelles\raw_data\DESC_data\DATA_SENSOR\capteurs_pression\calibratio
 
 
 2_formatted_data
-	"scripts_R" est le dossier contenant tous les scripts pour les analyses.	
-		1)- 1_rawToFormatted.R : cherche les donnees de calibration dans les differents fichiers et met tout sous forme formattee (date-tension-temperature-deltaH par fichier)
-			Ce dossier contient les donnees formattees : 4 colonnes (dates, tension, deltaH, temperature)
-			Ces donnees peuvent ensuite etre traitees a la main pour regler les eventuels problemes (filtrage des series en chambre, reglage de l'offset).
 
-		2) 1bis_filterClimaticChamber.R : 
-			filtre les données prises en chambre climatique. A partir des séries de la chambre climatique, ce script décompose les variations de température en périodes de variations linéaires et effectue un fit linéraire du signal de tension correspondant.
+"scripts_R" est le dossier contenant tous les scripts pour les analyses.	
+	1)- 1_rawToFormatted.R : cherche les donnees de calibration dans les differents fichiers et met tout sous forme formattee (date-tension-temperature-deltaH par fichier)
+		Ce dossier contient les donnees formattees : 4 colonnes (dates, tension, deltaH, temperature)
+		Ces donnees peuvent ensuite etre traitees a la main pour regler les eventuels problemes (filtrage des series en chambre, reglage de l'offset).
+
+	2) 1bis_filterClimaticChamber.R : 
+		filtre les données prises en chambre climatique. A partir des séries de la chambre climatique, ce script décompose les variations de température en périodes de variations linéaires et effectue un fit linéraire du signal de tension correspondant.
 		enregistre les coefficients des calibrations U-T dans calib/[capteur]/intermediate
 	
-		3) 1bis2_arrangeOffset.R : pour certains capteurs, arranger l'offset des series U-T de maniere a recaler avec la relation U-H
+	3) 1bis2_arrangeOffset.R : pour certains capteurs, arranger l'offset des series U-T de maniere a recaler avec la relation U-H
 	- 1ter_plotFormatted.R : plot les séries correspondant aux données dans 2_formatted_data et enregistre dans plots/
 	
 	
-		4) 2_formattedToProcessed.R : script qui prend les donnees dans 2_formatted_data, les rassemble dans un seul fichier enregistre dans 3_processed_data.
-			- processedToCalib.R : script lisant les données processées et effectuant les calibrations. Il fait les calibrations 
-				U-H enregistrees dans calib/[capteur]/intermediate
-				UHT (finales) enregistrees dans calib/[capteur]
-			- 2bis_plot_processed.R : plot les séries correspondant aux données dans 3_processed_data et enregistre dans plots/
+	4) 2_formattedToProcessed.R : script qui prend les donnees dans 2_formatted_data, les rassemble dans un seul fichier enregistre dans 3_processed_data.
+		- processedToCalib.R : script lisant les données processées et effectuant les calibrations. Il fait les calibrations 
+			U-H enregistrees dans calib/[capteur]/intermediate
+			UHT (finales) enregistrees dans calib/[capteur]
+		- 2bis_plot_processed.R : plot les séries correspondant aux données dans 3_processed_data et enregistre dans plots/
 	
 	
 3_processed_data contient un fichier par capteur avec toutes les donnees qui vont servir aux relations lineaires de la calibration.
