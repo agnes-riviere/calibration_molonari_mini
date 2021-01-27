@@ -1,7 +1,7 @@
 ###############################################
 # authors: Agnes Riviere agnes.riviere@mines-paristech.fr et Karina Cucchi karina.cucchi@gmail.com
 
-wd=paste0("scripts_R")
+wd=paste0("~/Programmes/calibration_molonari_mini/scripts_R")
 # a modifier
 
 setwd(wd)
