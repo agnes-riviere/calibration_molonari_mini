@@ -20,7 +20,13 @@ source('utils_functionsHoboDates.R')
 # initialize paths
 pathToRaw = '../data/1_raw_data/'
 pathToFormatted = '../data/2_formatted_data/'
-dir.create('../data/2_formatted_data/')
+
+if(!dir.exists('../data/2_formatted_data/')){
+  dir.create('../data/2_formatted_data/')  
+}
+
+
+
 ### read and clean all data
 
 folders = list.files(pathToRaw,pattern = '^p') # where raw data is stored
@@ -36,7 +42,7 @@ for(iFold in 1:length(folders)){
   
   sub_folders = list.files(paste0(pathToRaw,folders[iFold]),pattern = '^p')
   print(sub_folders)
-  iSubFold = 1
+  iSubFold = 2
   print(sub_folders[iSubFold])
   for(iSubFold in 1:length(sub_folders)){
     
@@ -62,8 +68,9 @@ for(iFold in 1:length(folders)){
         dates = rep(NA,nrow(dataRaw)),
         tension = as.numeric(sub(',','.',dataRaw$tension)),
         temperature = rep(NA,nrow(dataRaw)),
-        deltaH = as.numeric(sub(',','.',dataRaw$deltaH))/100 # cm to m
+        deltaH = as.numeric(sub(',','.',dataRaw$deltaH)) # cm to m
       )
+      if(max(dataHobo$deltaH)>1) {dataHobo$deltaH/100 } # cm to m 
       str(dataHobo)
       
       # get rid of saturated values (keep if between 0.65V and 2.45V)
