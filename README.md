@@ -57,6 +57,7 @@ Le dossier Avenelles\raw_data\DESC_data\DATA_SENSOR\capteurs_pression\calibratio
 		enregistre les coefficients des calibrations U-T dans calib/[capteur]/intermediate
 	
 	3) 1bis2_arrangeOffset.R : pour certains capteurs, arranger l'offset des series U-T de maniere a recaler avec la relation U-H
+        Le numero du capteur doit être indiqué dans l'entete du fichier
 	- 1ter_plotFormatted.R : plot les séries correspondant aux données dans 2_formatted_data et enregistre dans plots/
 	
 	

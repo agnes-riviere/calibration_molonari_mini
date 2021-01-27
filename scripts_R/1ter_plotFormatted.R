@@ -1,7 +1,8 @@
 ###############################################
 # authors: Agnes Riviere agnes.riviere@mines-paristech.fr et Karina Cucchi karina.cucchi@gmail.com
 ###############################################
-wd=paste0("/home/ariviere/Documents/Bassin-Orgeval/Donnee_Orgeval_Mines/raw_data/DESC_data/DATA_SENSOR/capteurs_pression/calibration_tmp/scripts_R")
+library(lubridate)
+wd=paste0("/home/ariviere/Programmes/calibration_molonari_mini/scripts_R/")
 
 
 Sys.setenv(TZ='UTC') # to avoid the problem of daylight saving
@@ -27,7 +28,7 @@ for(iFold in 1:length(folders)){
     for(iFile in 1:length(files)){
       
       pathFile = paste0(pathSubFold,'/',files[iFile])
-      print(paste0('plotting formatted files in ',pathFile))
+    print(paste0('plotting formatted files in ',pathFile))
       
       dataHobo <- read.csv(file = pathFile,sep=',')
       
@@ -56,6 +57,7 @@ for(iFold in 1:length(folders)){
         
         pdf(pathFileplot,width = 5,height = 4)
         dates <- as.POSIXct(dataHobo$dates,format='%d/%m/%Y %H:%M:%S')
+       if (is.na(dates[1]))  {dates <- as.POSIXct(dataHobo$dates,format='%d/%m/%Y %H:%M')}
         par(mar = c(5, 4, 4, 4) + 0.3)  # Leave space for z axis
         plot(dates,dataHobo$tension,type='l',
              xlab='dates',ylab = 'tension [V]',xaxt='n')

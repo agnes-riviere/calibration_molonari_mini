@@ -1,11 +1,11 @@
 ###############################################
 # authors: Agnes Riviere agnes.riviere@mines-paristech.fr et Karina Cucchi karina.cucchi@gmail.com
-wd=paste0('/home/ariviere/Documents/Bassin-Orgeval/Donnee_Orgeval_Mines/raw_data/DESC_data/DATA_SENSOR/capteurs_pression/calibration_tmp/scripts_R')
+wd=paste0('scripts_R')
 
 #setwd(wd)
 
 # sensor for which to make the correction
-sensor = 'p536'
+sensor = 'p533'
 pathFormatted = '../data/2_formatted_data/'
 pathCalib=paste0('../calib/',sensor,'/intermediate/')
 
@@ -20,7 +20,8 @@ dataUH <- read.csv(file = paste0(pathFormatted,sensor,'/',UHfolder[i],'/',fileUH
   linUH <- lm(formula = tension~deltaH,data = dataUH)
   T_calibUH <- unique(dataUH$temperature)
 }
-
+ 
+if (!is.na(T_calibUH)){
 # loop over U-T experiments
 UTfolder = list.files(paste0(pathFormatted,sensor),pattern = 'UT',ignore.case = T)
 UTpath = paste0(pathFormatted,sensor,'/',UTfolder,'/')
@@ -59,3 +60,4 @@ for(iFile in 1:length(UTfiles)){
 
 }
 
+}

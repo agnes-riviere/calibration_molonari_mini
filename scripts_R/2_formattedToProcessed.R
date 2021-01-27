@@ -4,7 +4,7 @@
 ### Keeping only the climatic chambre timeseries for U-T calibration
 ###############################################
 
-wd=paste0("/home/ariviere/Documents/Bassin-Orgeval/Donnee_Orgeval_Mines/raw_data/DESC_data/DATA_SENSOR/capteurs_pression/calibration_tmp/scripts_R")
+wd=paste0("scripts_R")
 
 #setwd(wd)
 
@@ -14,6 +14,12 @@ Sys.setenv(TZ='UTC') # to avoid the problem of daylight saving
 # initialize paths
 pathToFormatted = '../data/2_formatted_data/'
 pathToProcessed = '../data/3_processed_data/'
+
+
+
+if(!dir.exists(pathToProcessed)){
+  dir.create(pathToProcessed)  
+}
 
 ### read and clean all data
 
@@ -42,11 +48,7 @@ for (iFold in 1:length(folders)){
   # append data from U-H calibrations
   if(length(dirUH)==1){
     
-    nameFile <- list.files(paste0(pathToFor- 2_formattedToProcessed.R : script qui prend les donnees dans 2_formatted_data, les rassemble dans un seul fichier enregistre dans 3_processed_data.
-                                  - processedToCalib.R : script lisant les données processées et effectuant les calibrations. Il fait les calibrations 
-                                  U-H enregistrees dans calib/[capteur]/intermediate
-                                  UHT (finales) enregistrees dans calib/[capteur]
-                                  - 2bis_plot_processed.R : plot les séries correspondant aux données dans 3_processed_data et enregistre dans plots/matted,folders[iFold],'/',dirUH))
+    nameFile <- list.files(paste0(pathToFormatted,folders[iFold],'/',dirUH))
     pathFile <- paste0(pathToFormatted,folders[iFold],'/',dirUH,'/',nameFile)
     dataFile <- read.csv(file = pathFile,header = T,sep = ',')
     dataFile$experiment <- rep(nameFile,nrow(dataFile))

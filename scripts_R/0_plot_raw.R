@@ -1,7 +1,8 @@
 ###############################################
 # authors: Agnes Riviere agnes.riviere@mines-paristech.fr et Karina Cucchi karina.cucchi@gmail.com
 
-wd=paste0("/home/ariviere/Documents/Bassin-Orgeval/Donnee_Orgeval_Mines/raw_data/DESC_data/DATA_SENSOR/capteurs_pression/calibration_tmp/scripts_R")
+wd=paste0("~/Programmes/calibration_molonari_mini/scripts_R")
+# a modifier
 
 setwd(wd)
 
@@ -14,9 +15,9 @@ pathToFormatted = '../data/1_raw_data/'
 folders = list.files(pathToFormatted,pattern = '^p') # where raw data is stored
 print(folders)
 
-#for(iFold in 1:length(folders)){
-  for(iFold in c(10,12,16,17)){ 
-    iFold=17
+for(iFold in 1:length(folders)){
+  # for(iFold in c(10,12,16,17)){ 
+  #  iFold=17
   sub_folders = list.files(paste0(pathToFormatted,folders[iFold]),pattern = '^p')
   if('apoub' %in% list.files(paste0(pathToFormatted,folders[iFold]))){ # append folders in apoub
     sub_folders = c(sub_folders,
@@ -33,6 +34,7 @@ print(folders)
     files = list.files(pathSubFold,pattern = '.csv')
     files = files[grep(pattern = 'tableauDeBord',x = files,invert = T)]
     files = files[grep(pattern = 'enregistrement',x = files,invert = T)]
+    files = files[grep(pattern = 'Enregistrement',x = files,invert = T)]
     print(files)
     
     if(length(files)>0){
@@ -41,7 +43,7 @@ print(folders)
         
         pathFile = paste0(pathSubFold,'/',files[iFile])
         print(paste0('plotting formatted files in ',pathFile))
-        dataHobo <- read.csv(file = pathFile,sep=',',header = T)
+        dataHobo <- read.csv(file = pathFile,sep=',',header = T) 
          if(ncol(dataHobo)==1){
           dataHobo <- read.csv(file = pathFile,sep=',',header = T)
         }

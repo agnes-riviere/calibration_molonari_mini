@@ -10,7 +10,7 @@
 # saving complete timeseries U-H-T in 2_formatted_data
 ##################################################################
 
-wd=paste0("/home/ariviere/Documents/Bassin-Orgeval/Donnee_Orgeval_Mines/raw_data/DESC_data/DATA_SENSOR/capteurs_pression/calibration_tmp/scripts_R")
+wd=paste0("scripts_R")
 
 #setwd(wd)
 
@@ -21,14 +21,20 @@ source('utils_functionsHoboDates.R')
 pathToRaw = '../data/1_raw_data/'
 pathToFormatted = '../data/2_formatted_data/'
 
+if(!dir.exists('../data/2_formatted_data/')){
+  dir.create('../data/2_formatted_data/')  
+}
+
+
+
 ### read and clean all data
 
 folders = list.files(pathToRaw,pattern = '^p') # where raw data is stored
 print(folders)
 
 
-#for(iFold in 1:length(folders)){
-for(iFold in c(10,12,16,17)){
+for(iFold in 1:length(folders)){ 
+  #for(iFold in c(10,12,16,17)){
 
   if(!file.exists(paste0(pathToFormatted,folders[iFold]))){
     dir.create(paste0(pathToFormatted,folders[iFold]))  
@@ -36,7 +42,7 @@ for(iFold in c(10,12,16,17)){
   
   sub_folders = list.files(paste0(pathToRaw,folders[iFold]),pattern = '^p')
   print(sub_folders)
-  iSubFold = 1
+  iSubFold = 2
   print(sub_folders[iSubFold])
   for(iSubFold in 1:length(sub_folders)){
     
@@ -62,8 +68,9 @@ for(iFold in c(10,12,16,17)){
         dates = rep(NA,nrow(dataRaw)),
         tension = as.numeric(sub(',','.',dataRaw$tension)),
         temperature = rep(NA,nrow(dataRaw)),
-        deltaH = as.numeric(sub(',','.',dataRaw$deltaH))/100 # cm to m
+        deltaH = as.numeric(sub(',','.',dataRaw$deltaH)) # cm to m
       )
+      if(max(dataHobo$deltaH)>1) {dataHobo$deltaH/100 } # cm to m 
       str(dataHobo)
       
       # get rid of saturated values (keep if between 0.65V and 2.45V)

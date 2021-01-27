@@ -1,8 +1,8 @@
 ###############################################
 # authors: Agnes Riviere agnes.riviere@mines-paristech.fr et Karina Cucchi karina.cucchi@gmail.com
 ###############################################
-wd=paste0("/home/ariviere/Documents/Bassin-Orgeval/Donnee_Orgeval_Mines/raw_data/DESC_data/DATA_SENSOR/capteurs_pression/calibration_tmp/scripts_R")
-
+wd=paste0("scripts_R")
+# a modifier
 #setwd(wd)
 
 
@@ -23,7 +23,7 @@ if(!file.exists(paste0(pathPlot))){
 library(classInt)
 source('utils_colorbar.R')
 
-for (iFile in c(8,10,13,14)){ # loop over all sensors
+for (iFile in 1:length(files)){ # loop over all sensors
   
   nameSensor <- unlist(strsplit(files[iFile],'_')[[1]][1])
   
