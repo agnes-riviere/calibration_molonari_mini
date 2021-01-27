@@ -23,7 +23,7 @@ if(!file.exists(paste0(pathPlot))){
 library(classInt)
 source('utils_colorbar.R')
 
-for (iFile in c(8,10,13,14)){ # loop over all sensors
+for (iFile in 1:length(files)){ # loop over all sensors
   
   nameSensor <- unlist(strsplit(files[iFile],'_')[[1]][1])
   

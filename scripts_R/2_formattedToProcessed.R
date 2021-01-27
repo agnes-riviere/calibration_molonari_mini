@@ -14,7 +14,13 @@ Sys.setenv(TZ='UTC') # to avoid the problem of daylight saving
 # initialize paths
 pathToFormatted = '../data/2_formatted_data/'
 pathToProcessed = '../data/3_processed_data/'
-dir.create(pathToProcessed)
+
+
+
+if(!dir.exists(pathToProcessed)){
+  dir.create(pathToProcessed)  
+}
+
 ### read and clean all data
 
 folders = list.files(pathToFormatted,pattern = '^p') # where raw data is stored

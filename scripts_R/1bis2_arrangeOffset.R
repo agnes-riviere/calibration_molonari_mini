@@ -20,7 +20,8 @@ dataUH <- read.csv(file = paste0(pathFormatted,sensor,'/',UHfolder[i],'/',fileUH
   linUH <- lm(formula = tension~deltaH,data = dataUH)
   T_calibUH <- unique(dataUH$temperature)
 }
-
+ 
+if (!is.na(T_calibUH)){
 # loop over U-T experiments
 UTfolder = list.files(paste0(pathFormatted,sensor),pattern = 'UT',ignore.case = T)
 UTpath = paste0(pathFormatted,sensor,'/',UTfolder,'/')
@@ -59,3 +60,4 @@ for(iFile in 1:length(UTfiles)){
 
 }
 
+}
