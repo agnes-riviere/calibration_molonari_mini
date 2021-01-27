@@ -1,8 +1,10 @@
 ###############################################
 # authors: Agnes Riviere agnes.riviere@mines-paristech.fr et Karina Cucchi karina.cucchi@gmail.com
 
+
 wd=paste0("~/Programmes/calibration_molonari_mini/scripts_R")
 # a modifier
+#wd=paste0("C:/Users/musta/Documents/GitHub/calibration_molonari_mini/scripts_R/")
 
 setwd(wd)
 
@@ -16,8 +18,6 @@ folders = list.files(pathToFormatted,pattern = '^p') # where raw data is stored
 print(folders)
 
 for(iFold in 1:length(folders)){
-  # for(iFold in c(10,12,16,17)){ 
-  #  iFold=17
   sub_folders = list.files(paste0(pathToFormatted,folders[iFold]),pattern = '^p')
   if('apoub' %in% list.files(paste0(pathToFormatted,folders[iFold]))){ # append folders in apoub
     sub_folders = c(sub_folders,
@@ -50,7 +50,7 @@ for(iFold in 1:length(folders)){
         
         if(grepl(pattern = 'UH',x = pathFile)){ # in that case plot U vs deltaH
           
-          pathPlot = paste0('../plots/1_raw/for(iFold in 1:length(folders)){',folders[iFold],'/',sub_folders[iSubFold])
+          pathPlot = paste0('../plots/1_raw/',folders[iFold],'/',sub_folders[iSubFold])
           if(!file.exists(pathPlot)){dir.create(pathPlot,recursive = T)}
           pathFileplot = paste0(pathPlot,'/',
                                 gsub(pattern = '.csv',replacement = '.pdf',x = files[iFile]))
