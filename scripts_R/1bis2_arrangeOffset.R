@@ -1,11 +1,11 @@
 ###############################################
 # authors: Agnes Riviere agnes.riviere@mines-paristech.fr et Karina Cucchi karina.cucchi@gmail.com
-wd=paste0('/home/ariviere/Documents/Bassin-Orgeval/Donnee_Orgeval_Mines/raw_data/DESC_data/DATA_SENSOR/capteurs_pression/calibration_tmp/scripts_R')
+wd=paste0('scripts_R')
 
 #setwd(wd)
 
 # sensor for which to make the correction
-sensor = 'p536'
+sensor = 'p533'
 pathFormatted = '../data/2_formatted_data/'
 pathCalib=paste0('../calib/',sensor,'/intermediate/')
 

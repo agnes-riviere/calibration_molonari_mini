@@ -4,7 +4,7 @@
 # performing the linear calibration
 ######################################################
 
-wd=paste0("/home/ariviere/Documents/Bassin-Orgeval/Donnee_Orgeval_Mines/raw_data/DESC_data/DATA_SENSOR/capteurs_pression/calibration_tmp/scripts_R")
+wd=paste0("scripts_R")
 
 #setwd(wd)
 
@@ -15,8 +15,8 @@ Sys.setenv(TZ='UTC') # to avoid the problem of daylight saving
 pathProcessed = '../data/3_processed_data/'
 files = list.files(pathProcessed,pattern = '.csv') # where processed data is stored
 
-#for (iFile in 1:length(files)){
-  for (iFile in c(8,10,13,14)){ # loop over all sensors
+for (iFile in 1:length(files)){
+  #  for (iFile in c(8,10,13,14)){ # loop over all sensors
     
     
     

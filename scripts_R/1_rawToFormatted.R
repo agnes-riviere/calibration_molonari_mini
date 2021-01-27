@@ -10,7 +10,7 @@
 # saving complete timeseries U-H-T in 2_formatted_data
 ##################################################################
 
-wd=paste0("/home/ariviere/Documents/Bassin-Orgeval/Donnee_Orgeval_Mines/raw_data/DESC_data/DATA_SENSOR/capteurs_pression/calibration_tmp/scripts_R")
+wd=paste0("scripts_R")
 
 #setwd(wd)
 
@@ -20,15 +20,15 @@ source('utils_functionsHoboDates.R')
 # initialize paths
 pathToRaw = '../data/1_raw_data/'
 pathToFormatted = '../data/2_formatted_data/'
-
+dir.create('../data/2_formatted_data/')
 ### read and clean all data
 
 folders = list.files(pathToRaw,pattern = '^p') # where raw data is stored
 print(folders)
 
 
-#for(iFold in 1:length(folders)){
-for(iFold in c(10,12,16,17)){
+for(iFold in 1:length(folders)){ 
+  #for(iFold in c(10,12,16,17)){
 
   if(!file.exists(paste0(pathToFormatted,folders[iFold]))){
     dir.create(paste0(pathToFormatted,folders[iFold]))  
