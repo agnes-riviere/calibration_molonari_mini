@@ -20,6 +20,10 @@ boolPlotPdf=T
 for (iFile in 1:length(filesData)){
   
   sensorName <- unlist(strsplit(filesData[iFile],split = '_')[[1]][1])
+  pathfig=paste0(pathPlot,sensorName)
+  if(!dir.exists(pathfig)){
+    dir.create(pathfig)  
+  }
   
   # read processed data
   dataHobo=read.table(file = paste0(pathProcessed,filesData[iFile]),

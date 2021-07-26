@@ -1,8 +1,9 @@
 ###############################################
 # authors: Agnes Riviere agnes.riviere@mines-paristech.fr et Karina Cucchi karina.cucchi@gmail.com
-wd=paste0('scripts_R')
+wd=paste0('/home/ariviere/Programmes/calibration_molonari_mini/scripts_R')
 # a modifier
 #setwd(wd)
+source('utils_functionsHoboDates.R')
 
 Sys.setenv(TZ='UTC') # to avoid the problem of daylight saving
 
@@ -21,20 +22,30 @@ for(iFold in 1:length(folders)){
   
   # consider only modified data
   files <- list.files(paste0(pathToFormatted,folders[iFold],'/',sub_folders[iSubFold_chb]),
-                      pattern = 'modif.csv')
+                      pattern = '.csv')
+  files <- files[ !grepl("_flt", files) ]
   print(files)
   
   if(length(files)>0){
     
-    iFile=1
+    iFile=2
     for(iFile in 1:length(files)){
       fileName <- paste0(pathToFormatted,folders[iFold],
                          '/',sub_folders[iSubFold_chb],
                          '/',files[iFile])
+      print(fileName)
       dataHobo = read.csv(file = fileName,
-                          sep=';',colClasses = c('character',rep('numeric',3)))
-      str(dataHobo)
+                          sep=',',colClasses = c('character',rep('numeric',3)))
       
+      
+      if(ncol(dataHobo)==1){
+        dataHobo = read.csv(file = fileName,
+                            sep=';',colClasses = c('character',rep('numeric',3)))
+      }
+      
+      dataHobo$dates=formatHoboDate(dataHobo$dates)
+      str(dataHobo)
+
       if(all(is.na(dataHobo$dates))){
         dataHobo$dates_posix <- 1:nrow(dataHobo)
       }else{

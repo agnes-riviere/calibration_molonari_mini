@@ -1,7 +1,7 @@
 ###############################################
 # authors: Agnes Riviere agnes.riviere@mines-paristech.fr et Karina Cucchi karina.cucchi@gmail.com
 ###############################################
-wd=paste0("scripts_R")
+wd=paste0('/home/ariviere/Programmes/calibration_molonari_mini/scripts_R/')
 # a modifier
 #setwd(wd)
 
@@ -40,8 +40,8 @@ for (iFile in 1:length(files)){ # loop over all sensors
                       sep=',',header=T,
                       colClasses=c('character','numeric','numeric','numeric','character'))
   
-  if(boolPlotPdf) pdf(paste0(pathPlot,nameSensor,'_plot2D_tension.pdf'),width=6,height=4)
-  colInt = classIntervals(dataHobo$tension,n=20,style = "pretty")
+  if(boolPlotPdf) pdf(paste0(pathPlot,nameSensor,'/',nameSensor,'_plot2D_tension.pdf'),width=6,height=4)
+  colInt = classIntervals(as.numeric(dataHobo$tension),n=20,style = "pretty")
   colPoints = findColours(colInt,c('blue','yellow'))
   layout(matrix(c(1,2),nrow=1), widths=c(3,1))
   plot(x=dataHobo$deltaH,y=dataHobo$temperature,pch=19,
@@ -51,7 +51,7 @@ for (iFile in 1:length(files)){ # loop over all sensors
             min=min(dataHobo$tension),max=max(dataHobo$tension),title = 'tension [V]')
   if(boolPlotPdf) dev.off()
   
-  if(boolPlotPdf) pdf(paste0(pathPlot,nameSensor,'_plot2D_Temperature.pdf'),width=6,height=4)
+  if(boolPlotPdf) pdf(paste0(pathPlot,nameSensor,'/',nameSensor,'_plot2D_Temperature.pdf'),width=6,height=4)
   if(length(unique(dataHobo$temperature))>1){
     colInt = classIntervals(dataHobo$temperature,n=3,style = "pretty",largeN = 100000)
     colPoints = findColours(colInt,c('blue','yellow'))
@@ -67,7 +67,7 @@ for (iFile in 1:length(files)){ # loop over all sensors
             title = 'T [C]')
   if(boolPlotPdf) dev.off()
   
-  if(boolPlotPdf) pdf(paste0(pathPlot,nameSensor,'_plot2D_DeltaH.pdf'),width=6,height=4)
+  if(boolPlotPdf) pdf(paste0(pathPlot,nameSensor,'/',nameSensor,'_plot2D_DeltaH.pdf'),width=6,height=4)
   colInt = classIntervals(dataHobo$deltaH,n=7,style = "pretty")
   colPoints = findColours(colInt,c('blue','yellow'))
   layout(matrix(c(1,2),nrow=1), widths=c(3,1))
