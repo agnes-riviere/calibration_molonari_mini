@@ -4,7 +4,7 @@
 ### Keeping only the climatic chambre timeseries for U-T calibration
 ###############################################
 
-wd=paste0("scripts_R")
+wd=paste0('/home/ariviere/Programmes/calibration_molonari_mini/scripts_R')
 
 #setwd(wd)
 
@@ -61,6 +61,7 @@ for (iFold in 1:length(folders)){
   if(length(dirUT)==1){
     
     nameFiles <- list.files(paste0(pathToFormatted,folders[iFold],'/',dirUT),pattern = '.csv')
+    nameFiles <- nameFiles[ !grepl("_flt", nameFiles) ]
     print(nameFiles)
     for(iFile in 1:length(nameFiles)){
       pathFile <- paste0(pathToFormatted,folders[iFold],'/',dirUT,'/',nameFiles[iFile])

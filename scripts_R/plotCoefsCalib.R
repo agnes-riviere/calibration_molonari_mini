@@ -1,7 +1,7 @@
 ###############################################
 # authors: Agnes Riviere agnes.riviere@mines-paristech.fr et Karina Cucchi karina.cucchi@gmail.com
 ######################################################
-wd=paste0('/scripts_R')
+wd=paste0('/home/ariviere/Programmes/calibration_molonari_mini/scripts_R/')
 
 setwd(wd)
 
@@ -18,7 +18,7 @@ vectCoefs = array(dim = c(0,3))
 colnames(vectCoefs) <- c('sensor','dU/dT','deltaH')
 for(iFold in 1:length(folders)){
 
-  files <- list.files(paste0(pathCalib,folders[iFold],'/intermediate'),pattern = 'flt')
+  files <- list.files(paste0(pathCalib,folders[iFold],'/intermediate/'),pattern = 'UH')
   print(files)
   
   for(iFile in 1:length(files)){

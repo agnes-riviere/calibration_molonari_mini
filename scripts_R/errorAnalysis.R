@@ -4,7 +4,7 @@
 # performing the linear calibration
 ######################################################
 
-wd=paste0('/home/ariviere/Documents/Bassin-Orgeval/Donnee_Orgeval_Mines/raw_data/DESC_data/DATA_SENSOR/capteurs_pression/calibration_tmp/scripts_R')
+wd=paste0('/home/ariviere/Programmes/calibration_molonari_mini/scripts_R/')
 setwd(wd)
 
 Sys.setenv(TZ='UTC') # to avoid the problem of daylight saving
@@ -23,7 +23,7 @@ for (iFile in 1:length(filesData)){
   
   # read processed data
   dataHobo=read.table(file = paste0(pathProcessed,filesData[iFile]),
-                     sep=';',header=T,
+                     sep=',',header=T,
                      colClasses=c('character',rep('numeric',3),'character'))
   
   # --------- consider only U-H calibration -----------------
@@ -34,7 +34,7 @@ for (iFile in 1:length(filesData)){
   U_lin = coefficients(UH_fit)['(Intercept)'] + 
     coefficients(UH_fit)['deltaH'] * dataHobo$deltaH
   errorU=dataHobo$tension - U_lin
-  if(boolPlotPdf) pdf(paste0(pathPlot,sensorName,'_errorUvsT_noTCorrection.pdf'),
+  if(boolPlotPdf) pdf(paste0(pathPlot,sensorName,'/',sensorName,'_errorUvsT_noTCorrection.pdf'),
                       width = 4,height=4)
   plot(x=dataHobo$temperature,y=errorU,
        xlab='',ylab='',pch=16)
@@ -45,7 +45,7 @@ for (iFile in 1:length(filesData)){
   deltaH_lin = (dataHobo$tension - coefficients(UH_fit)['(Intercept)'])/
     coefficients(UH_fit)['deltaH']
   errorDeltaH=dataHobo$deltaH - deltaH_lin
-  if(boolPlotPdf) pdf(paste0(pathPlot,sensorName,'_errordeltaHvsT.pdf'),
+  if(boolPlotPdf) pdf(paste0(pathPlot,sensorName,'/',sensorName,'_errordeltaHvsT.pdf'),
                       width = 8,height=4)
   layout(matrix(c(1,2),nrow=1))
   plot(x=dataHobo$temperature,y=errorDeltaH,
@@ -53,18 +53,18 @@ for (iFile in 1:length(filesData)){
   mtext(text = 'T [C]',side = 1,line = 2)
   mtext(text = expression(Delta*'H'[fit]*' - '*Delta*'H'['meas']* '[m]'),
         side = 2,line = 2)
-  # if(boolPlotPdf) dev.off()
+   if(boolPlotPdf) dev.off()
   
   # --------- consider U=f(H,T) calibration ------------------
   dataCalibUHT0 = read.table(file = paste0('../calib/',sensorName,
                                            '/calibfit_',sensorName,'.csv'),
-                             sep=';')
+                             sep=',')
   dataCalibUHT=as.list(dataCalibUHT0[,2]);names(dataCalibUHT) <- dataCalibUHT0[,1]
   rm(dataCalibUHT0)
   deltaH_lin =1/dataCalibUHT$`dU/dH` * (dataHobo$tension - dataCalibUHT$Intercept -
                                          dataCalibUHT$`dU/dT` * dataHobo$temperature)
-  # if(boolPlotPdf) pdf(paste0(pathPlot,sensorName,'_errordeltaHvsT_TCorrection.pdf'),
-                      # width = 4,height=4)
+   if(boolPlotPdf) pdf(paste0(pathPlot,sensorName,'/',sensorName,'_errordeltaHvsT_TCorrection.pdf'),
+                      width = 4,height=4)
   plot(x=dataHobo$temperature,y=deltaH_lin - dataHobo$deltaH,
        xlab='',
        ylab='',

@@ -9,9 +9,7 @@
 #     get corresponding head differential reported in dashboard
 # saving complete timeseries U-H-T in 2_formatted_data
 ##################################################################
-
-wd=paste0("scripts_R")
-
+wd=paste0('/home/ariviere/Programmes/calibration_molonari_mini/scripts_R')
 #setwd(wd)
 
 Sys.setenv(TZ='UTC') # to avoid the problem of daylight saving
@@ -62,19 +60,50 @@ for(iFold in 1:length(folders)){
                          sep=',',colClasses = 'character')
       if(ncol(dataRaw)==1){
         dataRaw = read.csv(file = paste0(pathDataRaw,'/',sub_folders[iSubFold],'.csv'),
-                           sep=',',colClasses = 'character')
+                           sep=';',colClasses = 'character')
       }
+      print('Vos noms de colonnes sont :')
+      print(colnames(dataRaw))
+      
+      
+      
+      if(!is.null(grep(colnames(dataRaw),pattern='Temp'))) {colnames(dataRaw)[grep(colnames(dataRaw),pattern='Temp')]="temperature"}
+      
+      if(!is.null(grep(colnames(dataRaw),pattern='Temp'))) {colnames(dataRaw)[grep(colnames(dataRaw),pattern='temp')]="temperature"}
+      
+      
+      
+      if(!is.null(grep(colnames(dataRaw),pattern='Tension'))) {colnames(dataRaw)[grep(colnames(dataRaw),pattern='Tension')]="tension"}
+      
+      if(!is.null(grep(colnames(dataRaw),pattern='tension'))) {colnames(dataRaw)[grep(colnames(dataRaw),pattern='tension')]="tension"}
+      
+      
+      if(!is.null(grep(colnames(dataRaw),pattern='Date'))) {colnames(dataRaw)[grep(colnames(dataRaw),pattern='Date')]="dates"}
+      
+      if(!is.null(grep(colnames(dataRaw),pattern='date'))) {colnames(dataRaw)[grep(colnames(dataRaw),pattern='date')]="dates"}
+      
+      
+      if(!is.null(grep(colnames(dataRaw),pattern='DeltaH'))) {colnames(dataRaw)[grep(colnames(dataRaw),pattern='DeltaH')]="deltaH"}
+      
+      if(!is.null(grep(colnames(dataRaw),pattern='deltah'))) {colnames(dataRaw)[grep(colnames(dataRaw),pattern='deltah')]="deltaH"}
+      
+      if(!is.null(grep(colnames(dataRaw),pattern='DELTAH'))) {colnames(dataRaw)[grep(colnames(dataRaw),pattern='DELTAH')]="deltaH"}
+      
+      if(!is.null(grep(colnames(dataRaw),pattern='deltaH'))) {colnames(dataRaw)[grep(colnames(dataRaw),pattern='deltaH')]="deltaH"}
+      
+      print('Vos noms de colonnes sont devenus:')
+      print(colnames(dataRaw))
       dataHobo = data.frame(
         dates = rep(NA,nrow(dataRaw)),
         tension = as.numeric(sub(',','.',dataRaw$tension)),
         temperature = rep(NA,nrow(dataRaw)),
         deltaH = as.numeric(sub(',','.',dataRaw$deltaH)) # cm to m
       )
-      if(max(dataHobo$deltaH)>1) {dataHobo$deltaH/100 } # cm to m 
+      if(max(abs(dataHobo$deltaH))>1) {dataHobo$deltaH=dataHobo$deltaH/100 } # cm to m 
       str(dataHobo)
       
-      # get rid of saturated values (keep if between 0.65V and 2.45V)
-      idxKeep = which(dataHobo$tension >= 0.65 & dataHobo$tension <= 2.45)
+      # get rid of saturated values (keep if between 0.5V and 2.45V)
+      idxKeep = which(dataHobo$tension >= 0.5 & dataHobo$tension <= 2.45)
       dataHobo <- dataHobo[idxKeep,]
       
       # import temperature during calibration
@@ -104,6 +133,14 @@ for(iFold in 1:length(folders)){
       data_dashboard <- read.csv(paste0(pathDataRaw,'/',
                                         list.files(pathDataRaw,pattern = 'tableauDeBord.csv')),
                                  sep=',',header=T,colClasses = 'character')
+      
+      if(ncol(dataRaw_i)==1){
+      data_dashboard <- read.csv(paste0(pathDataRaw,'/',
+                                        list.files(pathDataRaw,pattern = 'tableauDeBord.csv')),
+                                 sep=';',header=T,colClasses = 'character')
+      }
+      
+      
       print(data_dashboard)
       
       # files to read are first column of dashboard  
@@ -112,18 +149,50 @@ for(iFold in 1:length(folders)){
       print(devCoupl)
       
       # loop over U-T files as indicated in the dashboard
-      i=1
+      i=3
       for (i in 1:length(devCoupl)){
         
         # read temperature and tension data from file
         pathFile_i <- paste0(pathDataRaw,'/',devCoupl[i])
         dataRaw_i <- read.csv(file = pathFile_i,header=T,
                               sep=',',colClasses = 'character')
+        
+        if(ncol(dataRaw_i)==1){
+          dataRaw_i <- read.csv(file = pathFile_i,header=T,
+                                sep=';',colClasses = 'character')
+        }
+        
+  
+        
+        
+        dataRaw_i=dataRaw_i[,1:4]
+  
+        
+        print('Vos noms de colonnes sont :')
+        print(colnames(dataRaw_i))
+        
+        if(!is.null(grep(colnames(dataRaw_i),pattern='Temp'))) {colnames(dataRaw_i)[grep(colnames(dataRaw_i),pattern='Temp')]="temperature"}
+        
+        if(!is.null(grep(colnames(dataRaw_i),pattern='Temp'))) {colnames(dataRaw_i)[grep(colnames(dataRaw_i),pattern='temp')]="temperature"}
+        
+        
+        
+        if(!is.null(grep(colnames(dataRaw_i),pattern='Tension'))) {colnames(dataRaw_i)[grep(colnames(dataRaw_i),pattern='Tension')]="tension"}
+        
+        if(!is.null(grep(colnames(dataRaw_i),pattern='tension'))) {colnames(dataRaw_i)[grep(colnames(dataRaw_i),pattern='tension')]="tension"}
+        
+        
+        if(!is.null(grep(colnames(dataRaw_i),pattern='Date'))) {colnames(dataRaw_i)[grep(colnames(dataRaw_i),pattern='Date')]="dates"}
+        
+        if(!is.null(grep(colnames(dataRaw_i),pattern='date'))) {colnames(dataRaw_i)[grep(colnames(dataRaw_i),pattern='date')]="dates"}
+        print('Vos noms de colonnes sont devenus:')
+        print(colnames(dataRaw_i))
+
         str(dataRaw_i)
 
       
         dataRaw_i=subset( dataRaw_i, dataRaw_i$temperature<40)
-        
+        dataRaw_i$dates=formatHoboDate( dataRaw_i$dates)
         
         # get corresponding head differential from csv filedates,tension,deltaH
         deltaH_i <- data_dashboard[which(data_dashboard[,1]==devCoupl[i]),2]
