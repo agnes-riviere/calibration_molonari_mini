@@ -4,7 +4,7 @@
 # performing the linear calibration
 ######################################################
 
-wd=paste0("scripts_R")
+wd=paste0('/home/ariviere/Programmes/calibration_molonari_mini/scripts_R/')
 
 #setwd(wd)
 
@@ -67,3 +67,9 @@ for (iFile in 1:length(files)){
               file=pathFile,quote=F,col.names=F,sep=',')
   
 }
+
+# calculate errors
+U_linT = coefficients(UH_fit)['(Intercept)'] + coefficients(UH_fit)['deltaH'] * dataHobo$deltaH+ coefficients(fit_errorUvsT )['dataHobo$temperature'] * dataHobo$temperature
+
+
+plot(dataHobo$tension,U_linT,xlim=c(1,1.4))

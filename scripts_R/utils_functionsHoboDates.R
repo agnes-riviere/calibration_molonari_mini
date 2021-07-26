@@ -1,7 +1,16 @@
 ###############################################
 # authors: Agnes Riviere agnes.riviere@mines-paristech.fr et Karina Cucchi karina.cucchi@gmail.com
-# in string str, add character char at location loc
+
+# this script contains functions for reading hobo dates
+# these functions detect the format of input dates
+# the standard output format is dd/mm/YYYY HH:MM:SS
+# main function is formatHoboDate
 ###############################################
+library(dplyr)
+
+
+
+# in string str, add character char at location loc
 addCharInString = function(char,str,loc){
   locRev = loc[order(loc,decreasing = T)]
   str_split = unlist(strsplit(str,split=''))
@@ -84,7 +93,7 @@ addAmPm = function (datesStr){
 # output is a vector with format %d/%m/%Y %H:%M:%S
 formatHoboDate = function(datesStrHoboRaw){
   
-  cat('\n\tformatting dates...')
+  cat('\n \t formatting dates...')
   
   # first thing check format mm/dd/YYYY and not mm/dd/yy
   ncharYear=nchar(unlist(strsplit(unlist(strsplit(datesStrHoboRaw[1],'/')),' '))[3])
@@ -102,7 +111,7 @@ formatHoboDate = function(datesStrHoboRaw){
   isOkDates = all(ncharDates==10) # mm/dd/YYYY
   ncharTime=unlist(lapply(strsplit(datesStrHoboRaw,' '),function(x) nchar(x[[2]])))
   isOkTime = all(ncharTime==8) # HH:MM:SS
-  # si ce  n est pas le bon nombre de caracteres on ajoute les zeros...
+  # si ce n'est pas le bon nombre de caract?res on ajoute les z?ros...
   if( !isOkDates | !isOkTime){
     cat('\n\tadding zeros where missing')
     for (iRow in 1:length(datesStrHoboRaw)){
@@ -121,16 +130,34 @@ formatHoboDate = function(datesStrHoboRaw){
       cat(paste(' ... now with am-pm, eg.'),datesStrHoboRaw[1])
     }
     cat('\n\tfrom am-pm to 24-hour time')
-    datesHoboRaw = strptime(datesStrHoboRaw,format = '%m/%d/%Y %I:%M:%S %p')
+    datesHoboRaw= strptime(datesStrHoboRaw,format = '%m/%d/%Y %I:%M:%S %p')
     datesStrHoboRaw = format(datesHoboRaw,'%m/%d/%Y %H:%M:%S')
     cat(paste(' ... now in 24-hour time, eg.'),datesStrHoboRaw[1])
   }
   
   # finally transform from mm/dd/YYYY HH:MM:SS to dd/mm/YYYY HH:MM:SS
-  datesHoboRaw = strptime(datesStrHoboRaw,format = '%m/%d/%Y %H:%M:%S')
-  datesStrHoboRaw = format(datesHoboRaw,'%d/%m/%Y %H:%M:%S')
+
+  
+  if (is.na(as.numeric(difftime(strptime(datesStrHoboRaw[100], format="%d/%m/%Y  %H:%M"),strptime(datesStrHoboRaw[1], format="%d/%m/%Y  %H:%M"),units="mins")))==FALSE){
+    if (as.numeric(difftime(strptime(datesStrHoboRaw[100], format="%d/%m/%Y  %H:%M"),strptime(datesStrHoboRaw[1], format="%d/%m/%Y  %H:%M"),units="mins"))<2){
+      datesHoboRaw  = strptime(datesStrHoboRaw,"%d/%m/%Y  %H:%M")
+      datesStrHoboRaw = format(datesHoboRaw ,'%d/%m/%Y %H:%M:%S')
+    }
+    if (as.numeric(difftime(strptime(datesStrHoboRaw[100], format="%d/%m/%Y  %H:%M"),strptime(datesStrHoboRaw[1], format="%d/%m/%Y  %H:%M"),units="mins"))>2){
+      datesHoboRaw = strptime(datesStrHoboRaw,format = '%m/%d/%Y %H:%M:%S')
+      datesStrHoboRaw = format(datesHoboRaw,'%d/%m/%Y %H:%M:%S')
+    }
+  } else if (is.na(as.numeric(difftime(strptime(datesStrHoboRaw[2], format="%m/%d/%Y  %H:%M"),strptime(datesStrHoboRaw[1], format="%m/%d/%Y  %H:%M"),units="mins")))==FALSE) {
+    datesHoboRaw = strptime(datesStrHoboRaw,format = '%m/%d/%Y %H:%M:%S')
+    datesStrHoboRaw = format(datesHoboRaw,'%d/%m/%Y %H:%M:%S')
+  } else  {
+    print("Pb date")}
+  
+  
+  
   
   #here the dates have the form dd/mm/YYYY HH:MM:SS with no problem of AM-PM
   # that's what we want !
   return(datesStrHoboRaw)
 }
+

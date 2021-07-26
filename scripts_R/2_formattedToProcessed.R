@@ -4,7 +4,7 @@
 ### Keeping only the climatic chambre timeseries for U-T calibration
 ###############################################
 
-wd=paste0("scripts_R")
+wd=paste0('/home/ariviere/Programmes/calibration_molonari_mini/scripts_R')
 
 #setwd(wd)
 

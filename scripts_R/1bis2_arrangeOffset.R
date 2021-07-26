@@ -1,11 +1,11 @@
 ###############################################
 # authors: Agnes Riviere agnes.riviere@mines-paristech.fr et Karina Cucchi karina.cucchi@gmail.com
-wd=paste0('scripts_R')
-
+wd=paste0('/home/ariviere/Programmes/calibration_molonari_mini/scripts_R')
 #setwd(wd)
+source('utils_functionsHoboDates.R')
 
 # sensor for which to make the correction
-sensor = 'p533'
+sensor = 'p3'
 pathFormatted = '../data/2_formatted_data/'
 pathCalib=paste0('../calib/',sensor,'/intermediate/')
 
@@ -31,6 +31,7 @@ iFile=1
 for(iFile in 1:length(UTfiles)){
   
   data_expUT_i <- read.csv(paste0(UTpath,UTfiles[iFile]),header = T,sep = ',')
+  if(ncol(data_expUT_i)==1) {  data_expUT_i <- read.csv(paste0(UTpath,UTfiles[iFile]),header = T,sep = ';')}
   
   # deltaH_calibUT : get deltaH corresponding to U-T experiment
   deltaH_calibUT <- unique(data_expUT_i$deltaH)

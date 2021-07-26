@@ -4,6 +4,7 @@
 library(lubridate)
 wd=paste0("/home/ariviere/Programmes/calibration_molonari_mini/scripts_R/")
 
+source('utils_functionsHoboDates.R')
 
 Sys.setenv(TZ='UTC') # to avoid the problem of daylight saving
 
@@ -31,6 +32,7 @@ for(iFold in 1:length(folders)){
     print(paste0('plotting formatted files in ',pathFile))
       
       dataHobo <- read.csv(file = pathFile,sep=',')
+      if (ncol(dataHobo)==1) {      dataHobo <- read.csv(file = pathFile,sep=';')}
       
       if(grepl(pattern = 'UH',x = pathFile)){ # in that case plot U vs deltaH
         
@@ -56,8 +58,15 @@ for(iFold in 1:length(folders)){
                               gsub(pattern = '.csv',replacement = '.pdf',x = files[iFile]))
         
         pdf(pathFileplot,width = 5,height = 4)
+        dataHobo$dates=formatHoboDate(dataHobo$dates)
         dates <- as.POSIXct(dataHobo$dates,format='%d/%m/%Y %H:%M:%S')
+        date2 <- as.Date(c(dates[1], dates[length(dates)]))
+        if (difftime(date2[2], date2[1], units = "days")>15) {
+          dates <- as.POSIXct(dataHobo$dates,format='%m/%d/%Y %H:%M:%S')
+          }
+
        if (is.na(dates[1]))  {dates <- as.POSIXct(dataHobo$dates,format='%d/%m/%Y %H:%M')}
+
         par(mar = c(5, 4, 4, 4) + 0.3)  # Leave space for z axis
         plot(dates,dataHobo$tension,type='l',
              xlab='dates',ylab = 'tension [V]',xaxt='n')
