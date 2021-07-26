@@ -36,7 +36,7 @@ for(iFold in 1:length(folders)){
   }
   
   print(sub_folders)
-  
+  iSubFold=1
   for(iSubFold in 1:length(sub_folders)){
     
     pathSubFold = paste0(pathToFormatted,folders[iFold],'/',sub_folders[iSubFold])

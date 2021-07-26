@@ -5,7 +5,7 @@ wd=paste0('/home/ariviere/Programmes/calibration_molonari_mini/scripts_R')
 source('utils_functionsHoboDates.R')
 
 # sensor for which to make the correction
-sensor = 'p3'
+sensor = 'p532'
 pathFormatted = '../data/2_formatted_data/'
 pathCalib=paste0('../calib/',sensor,'/intermediate/')
 

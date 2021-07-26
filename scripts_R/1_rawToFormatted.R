@@ -149,7 +149,7 @@ for(iFold in 1:length(folders)){
       print(devCoupl)
       
       # loop over U-T files as indicated in the dashboard
-      i=2
+      i=3
       for (i in 1:length(devCoupl)){
         
         # read temperature and tension data from file

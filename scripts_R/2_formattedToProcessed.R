@@ -61,6 +61,7 @@ for (iFold in 1:length(folders)){
   if(length(dirUT)==1){
     
     nameFiles <- list.files(paste0(pathToFormatted,folders[iFold],'/',dirUT),pattern = '.csv')
+    nameFiles <- nameFiles[ !grepl("_flt", nameFiles) ]
     print(nameFiles)
     for(iFile in 1:length(nameFiles)){
       pathFile <- paste0(pathToFormatted,folders[iFold],'/',dirUT,'/',nameFiles[iFile])

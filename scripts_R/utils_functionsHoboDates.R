@@ -139,15 +139,15 @@ formatHoboDate = function(datesStrHoboRaw){
 
   
   if (is.na(as.numeric(difftime(strptime(datesStrHoboRaw[100], format="%d/%m/%Y  %H:%M"),strptime(datesStrHoboRaw[1], format="%d/%m/%Y  %H:%M"),units="mins")))==FALSE){
-    if (as.numeric(difftime(strptime(datesStrHoboRaw[100], format="%d/%m/%Y  %H:%M"),strptime(datesStrHoboRaw[1], format="%d/%m/%Y  %H:%M"),units="mins"))<2){
-      datesHoboRaw  = strptime(datesStrHoboRaw,"%d/%m/%Y  %H:%M")
+    if (as.numeric(difftime(strptime(datesStrHoboRaw[100], format="%d/%m/%Y  %H:%M"),strptime(datesStrHoboRaw[1], format="%d/%m/%Y  %H:%M"),units="day"))<2){
+      datesHoboRaw  = strptime(datesStrHoboRaw,"%d/%m/%Y  %H:%M:%S")
       datesStrHoboRaw = format(datesHoboRaw ,'%d/%m/%Y %H:%M:%S')
     }
-    if (as.numeric(difftime(strptime(datesStrHoboRaw[100], format="%d/%m/%Y  %H:%M"),strptime(datesStrHoboRaw[1], format="%d/%m/%Y  %H:%M"),units="mins"))>2){
+    if (as.numeric(difftime(strptime(datesStrHoboRaw[100], format="%d/%m/%Y  %H:%M"),strptime(datesStrHoboRaw[1], format="%d/%m/%Y  %H:%M"),units="day"))>2){
       datesHoboRaw = strptime(datesStrHoboRaw,format = '%m/%d/%Y %H:%M:%S')
       datesStrHoboRaw = format(datesHoboRaw,'%d/%m/%Y %H:%M:%S')
     }
-  } else if (is.na(as.numeric(difftime(strptime(datesStrHoboRaw[2], format="%m/%d/%Y  %H:%M"),strptime(datesStrHoboRaw[1], format="%m/%d/%Y  %H:%M"),units="mins")))==FALSE) {
+  } else if (is.na(as.numeric(difftime(strptime(datesStrHoboRaw[2], format="%m/%d/%Y  %H:%M"),strptime(datesStrHoboRaw[1], format="%m/%d/%Y  %H:%M"),units="day")))==FALSE) {
     datesHoboRaw = strptime(datesStrHoboRaw,format = '%m/%d/%Y %H:%M:%S')
     datesStrHoboRaw = format(datesHoboRaw,'%d/%m/%Y %H:%M:%S')
   } else  {
