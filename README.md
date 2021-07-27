@@ -57,19 +57,19 @@ Les colonnes doivent se nommer #,dates,temperature,tension,,,
 
 4) Un fichier tableau de bords en csv doit être dans ce répetoire sous le noms ex : p537_2019-03-07_UT_tableauDeBord
 			
-        Ce fichier contient nom du fichier d'enregistrement	differentiel de charge [cm]
+Ce fichier contient nom du fichier d'enregistrement	differentiel de charge [cm]
 
-								*		nom du fichier d'enregistrement,differentiel de charge [cm]
-								*		p537_2019_03_08_calibUT_1.csv,1.5
-								*		p537_2019_03_11_calibUT_2.csv,-0.2
-								*		p537_2019_03_12_calibUT_3.csv,-1.5
-				*	Ne pas laisser les entêtes des fichiers (supprimer les deux premières lignes)
+    *		nom du fichier d'enregistrement,differentiel de charge [cm]
+    *		p537_2019_03_08_calibUT_1.csv,1.5
+    *		p537_2019_03_11_calibUT_2.csv,-0.2
+    *		p537_2019_03_12_calibUT_3.csv,-1.5
+    *	Ne pas laisser les entêtes des fichiers (supprimer les deux premières lignes)
 
 ### CALIBRATION UH Rampe en bois
 1) Creer un repertoire nommé pn°_capteur_annee_mois_jour_calibUH 
 
 
-		* 	ex:  p520_2016-02-22_calibUH
+    * 	ex:  p520_2016-02-22_calibUH
 
 
 * Le fichier 	excel pn°_capteur_annee_mois_jour_calibUH doit contenir 4 colonnes : hauteur droite(nappe), hauteur gauche (riviere), deltaH, tension mesurre (attention pas d'accent)
@@ -81,7 +81,7 @@ Les colonnes doivent se nommer #,dates,temperature,tension,,,
 2) Les sous-dossiers correspondant a des noms de capteurs contiennent les donnees relatives a chaque capteur.
 
 
-			* Chacun de ces sous-dossiers peuvent eventuellement contenir un dossier apoub, qui correspondent a des donnees qui ne sont pas exploitables pour les calibrations.
+* Chacun de ces sous-dossiers peuvent eventuellement contenir un dossier apoub, qui correspondent a des donnees qui ne sont pas exploitables pour les calibrations.
 			
 
 ###  0_plot_raw.R : ce n'est pas un fichier d'analyse mais il permet de creer les figures des mesures utilisees pour la calibration	
@@ -96,30 +96,30 @@ Il est important de vérifier que les données sont correctes c'est à dire que 
 ## Formatage des données
 "scripts_R" est le dossier contenant tous les scripts pour les analyses.	
 
-	1) 1_rawToFormatted.R : cherche les donnees de calibration dans les differents fichiers et met tout sous forme formattee (date-tension-temperature-deltaH par fichier)
+1) 1_rawToFormatted.R : cherche les donnees de calibration dans les differents fichiers et met tout sous forme formattee (date-tension-temperature-deltaH par fichier)
 
 
 		* Ce dossier contient les donnees formattees : 4 colonnes (dates, tension, deltaH, temperature)
 		* Ces donnees peuvent ensuite etre traitees a la main pour regler les eventuels problemes (filtrage des series en chambre, reglage de l'offset).
 
-	2) 1bis_filterClimaticChamber.R 
+2) 1bis_filterClimaticChamber.R 
 
 
 		* filtre les données prises en chambre climatique. A partir des séries de la chambre climatique, ce script décompose les variations de température en périodes de variations linéaires et effectue un fit linéraire du signal de tension correspondant.
 		* enregistre les coefficients des calibrations U-T dans calib/[capteur]/intermediate
         * sortie fichier filtré
 	
-	3) 1bis2_arrangeOffset.R : pour certains capteurs, arranger l'offset des series U-T de maniere a recaler avec la relation U-H
+3) 1bis2_arrangeOffset.R : pour certains capteurs, arranger l'offset des series U-T de maniere a recaler avec la relation U-H
         * Le numero du capteur doit être indiqué dans l'entete du fichier ligne 8 ex: sensor = 'p3'
-	4) 1ter_plotFormatted.R 
+4) 1ter_plotFormatted.R 
  * plot les séries correspondant aux données dans 2_formatted_data et enregistre dans plots/
 	
 	
-	4) 2_formattedToProcessed.R : script qui prend les donnees dans 2_formatted_data, les rassemble dans un seul fichier enregistre dans 3_processed_data.
-	* processedToCalib.R : script lisant les données processées et effectuant les calibrations. Il fait les calibrations 
+5) 2_formattedToProcessed.R : script qui prend les donnees dans 2_formatted_data, les rassemble dans un seul fichier enregistre dans 3_processed_data.
+* processedToCalib.R : script lisant les données processées et effectuant les calibrations. Il fait les calibrations 
 			U-H enregistrees dans calib/[capteur]/intermediate
 			UHT (finales) enregistrees dans calib/[capteur]
-	* 2bis_plot_processed.R : plot les séries correspondant aux données dans 3_processed_data et enregistre dans plots/
+* 2bis_plot_processed.R : plot les séries correspondant aux données dans 3_processed_data et enregistre dans plots/
 	
 
 ## Traitement des données
@@ -138,8 +138,8 @@ Il est important de vérifier que les données sont correctes c'est à dire que 
 
 ##  Scripts supplémentaires servant à l'analyse
 
-	* errorAnalysis.R : script qui fait l'etude des erreurs et qui met en evidence l'erreur faite si on neglige l'effet de la temperature
-	* plotCoefsCalib.R : script qui trace les coefficients des pentes U-T en fonction des capteurs et des differentiels de pression.	
-	* UvsT.R : script qui trace les series tension-temperature
-	* plot_field_checkCalib.R : compare les séries de pression sur le terrain, avec et sans la compensation en température
+* errorAnalysis.R : script qui fait l'etude des erreurs et qui met en evidence l'erreur faite si on neglige l'effet de la temperature
+* plotCoefsCalib.R : script qui trace les coefficients des pentes U-T en fonction des capteurs et des differentiels de pression.	
+* UvsT.R : script qui trace les series tension-temperature
+* plot_field_checkCalib.R : compare les séries de pression sur le terrain, avec et sans la compensation en température
 	
