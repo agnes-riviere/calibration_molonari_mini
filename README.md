@@ -12,9 +12,14 @@ Ces scripts nécessitent l'installation de Rstudio et des packages suivant:
 * tidyverse
 
 ## Format et contenus des fichiers
-* Il est important que les titres des colonnes des fichiers contiennent les mot : tension, temperature, dates. Si vous n'avez pas correctement configurer vos hobos vous devez modifier vos fichiers avant d'utiliser les scripts.
+* Si vous n'avez pas correctement configurer vos hobos vous devez modifier vos fichiers avant d'utiliser les scripts.
+* Il est important que les titres des colonnes des fichiers contiennent les mot : tension, temperature, dates. 
 * Separateur de champs est la virgule
 * le format des dates doit être JJ/MM/AAAA HH:MM:SS
+        ex 22/02/2020 10:00:00
+* le noms des fichiers ne doit pas contenir de caractères spéciaux 
+        c'est à dire "- 'signe moins",",","é",""",.......
+*l'entête des fichiers ne doit pas contenir de caractères spéciaux
 
 ## Répertoires
 Il est nécessaire de modifier les paths pour scriptR dans tous les scripts. ex wd=paste0('/home/ariviere/Programmes/calibration_molonari_mini/scripts_R')
@@ -51,8 +56,9 @@ Les colonnes doivent se nommer #,dates,temperature,tension,,,
 3) Conserver les fichiers hobo et les fichiers csv nommé ex p537_2019_03_12_calibUT_3 pour les trois différences de charge testées.
 
 
-           * Le format des dates est important ex : 1,11/03/2019 10:06:31,202.749,0.07656
-           * Attention les charges et la difference de charge doivent être en cm
+* Le format des dates est important 
+            ex : 1,11/03/2019 10:06:31,202.749,0.07656
+* Attention les charges et la difference de charge doivent être en cm
 
 
 4) Un fichier tableau de bords en csv doit être dans ce répetoire sous le noms ex : p537_2019-03-07_UT_tableauDeBord
@@ -63,7 +69,7 @@ Ce fichier contient nom du fichier d'enregistrement	differentiel de charge [cm]
     *		p537_2019_03_08_calibUT_1.csv,1.5
     *		p537_2019_03_11_calibUT_2.csv,-0.2
     *		p537_2019_03_12_calibUT_3.csv,-1.5
-    *	Ne pas laisser les entêtes des fichiers (supprimer les deux premières lignes)
+*	Ne pas laisser les entêtes des fichiers (supprimer les deux premières lignes)
 
 ### CALIBRATION UH Rampe en bois
 1) Creer un repertoire nommé pn°_capteur_annee_mois_jour_calibUH 
@@ -84,9 +90,14 @@ Ce fichier contient nom du fichier d'enregistrement	differentiel de charge [cm]
 * Chacun de ces sous-dossiers peuvent eventuellement contenir un dossier apoub, qui correspondent a des donnees qui ne sont pas exploitables pour les calibrations.
 			
 
-###  0_plot_raw.R : ce n'est pas un fichier d'analyse mais il permet de creer les figures des mesures utilisees pour la calibration	
+###  Vérifier les données brutes
+0_plot_raw.R : ce n'est pas un fichier d'analyse mais il permet de creer les figures des mesures utilisees pour la calibration	
 
 Il est important de vérifier que les données sont correctes c'est à dire que :
+* il est important d'utiliser le bon format des dates
+* le séparateur de champs doit être des virules
+* le noms des fichiers ne doit pas contenir de caractères spéciaux c'est à dire "-",",","é",""",.......
+*l'entête des fichiers ne doit pas contenir de caractères spéciaux
 * la droite UH est linéaire et qu'elle comporte des differences de charges négatives et positives. 
 * Les différences de pression entra la  nappe et la rivières sont de quelques centimètres généralement. 
 * Il est important de faire des mesures tous les centimètres entre -20 et +20 cm puis tous les 5 cm entres -20 et la saturation du capteur et entre +20 et la saturation du capteur.
@@ -99,18 +110,18 @@ Il est important de vérifier que les données sont correctes c'est à dire que 
 1) 1_rawToFormatted.R : cherche les donnees de calibration dans les differents fichiers et met tout sous forme formattee (date-tension-temperature-deltaH par fichier)
 
 
-		* Ce dossier contient les donnees formattees : 4 colonnes (dates, tension, deltaH, temperature)
-		* Ces donnees peuvent ensuite etre traitees a la main pour regler les eventuels problemes (filtrage des series en chambre, reglage de l'offset).
+* Ce dossier contient les donnees formattees : 4 colonnes (dates, tension, deltaH, temperature)
+* Ces donnees peuvent ensuite etre traitees a la main pour regler les eventuels problemes (filtrage des series en chambre, reglage de l'offset).
 
 2) 1bis_filterClimaticChamber.R 
 
 
-		* filtre les données prises en chambre climatique. A partir des séries de la chambre climatique, ce script décompose les variations de température en périodes de variations linéaires et effectue un fit linéraire du signal de tension correspondant.
-		* enregistre les coefficients des calibrations U-T dans calib/[capteur]/intermediate
-        * sortie fichier filtré
+* filtre les données prises en chambre climatique. A partir des séries de la chambre climatique, ce script décompose les variations de température en périodes de variations linéaires et effectue un fit linéraire du signal de tension correspondant.
+* enregistre les coefficients des calibrations U-T dans calib/[capteur]/intermediate
+* sortie fichier filtré
 	
 3) 1bis2_arrangeOffset.R : pour certains capteurs, arranger l'offset des series U-T de maniere a recaler avec la relation U-H
-        * Le numero du capteur doit être indiqué dans l'entete du fichier ligne 8 ex: sensor = 'p3'
+* Le numero du capteur doit être indiqué dans l'entete du fichier ligne 8 ex: sensor = 'p3'
 4) 1ter_plotFormatted.R 
  * plot les séries correspondant aux données dans 2_formatted_data et enregistre dans plots/
 	
