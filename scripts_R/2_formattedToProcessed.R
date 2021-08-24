@@ -6,7 +6,7 @@
 
 wd=paste0('/home/ariviere/Programmes/calibration_molonari_mini/scripts_R')
 
-#setwd(wd)
+setwd(wd)
 
 
 Sys.setenv(TZ='UTC') # to avoid the problem of daylight saving
