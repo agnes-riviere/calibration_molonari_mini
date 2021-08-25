@@ -1,4 +1,4 @@
- calibration_molonari_mini
+ Calibration molonari mini
  ==
 % Agnes Riviere agnes.riviere@mines-paristech.fr et Karina Cucchi
 # Attention
