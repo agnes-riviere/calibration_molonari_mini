@@ -1,29 +1,5 @@
 ﻿Protocole expérimental pour calibration des capteurs de pression
 
-**Karina Cucchi**
-
-` `TOC \o "1-3" \h \z \u [1	Objectifs	 PAGEREF _Toc462320870 \h 1](#_Toc462320870)
-
-[2	Introduction aux expériences	 PAGEREF _Toc462320871 \h 1](#_Toc462320871)
-
-[3	Étalonnage tension – pression différentielle	 PAGEREF _Toc462320872 \h 2](#_Toc462320872)
-
-[4	Étalonnage tension – température	 PAGEREF _Toc462320873 \h 4](#_Toc462320873)
-
-[4.1	Étalonnage en extérieur	 PAGEREF _Toc462320874 \h 5](#_Toc462320874)
-
-[4.2	Étalonnage en chambre climatique	 PAGEREF _Toc462320875 \h 7](#_Toc462320875)
-
-[4.3	Suite à l’étalonnage tension-température	 PAGEREF _Toc462320876 \h 7](#_Toc462320876)
-
-[5	Traitement des données enregistrées	 PAGEREF _Toc462320877 \h 7](#_Toc462320877)
-
-[5.1	Mise en forme des données	 PAGEREF _Toc462320878 \h 7](#_Toc462320878)
-
-[5.2	Prétraitement manuel	 PAGEREF _Toc462320879 \h 9](#_Toc462320879)
-
-[5.3	Calcul des courbes de calibration	 PAGEREF _Toc462320880 \h 9](#_Toc462320880)
-
 
 1. # **Objectifs**
 Les capteurs de pression sont utilisés pour mesurer le gradient de charge entre la rivière et un point sous le lit de la rivière. Le capteur de tension contient une membrane qui se courbe selon les pressions qui s’exercent de part et d’autre de celle-ci. Un circuit électrique construit autour de la membrane traduit la courbure de la membrane en tension électrique U. La tension électrique mesurée U est également fonction de la température T de la membrane.
