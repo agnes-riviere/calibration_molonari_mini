@@ -3,6 +3,7 @@
 % Agnes Riviere agnes.riviere@mines-paristech.fr et Karina Cucchi
 # Attention
 Les noms des capteurs de pressions doivent tous commencer par un "p".
+La calibration doit être effectuée selon le protocole suivant [protocole_calibration.md](protocole_calibration.md)
 ## Installation de librairies
 Ces scripts nécessitent l'installation de Rstudio et des packages suivant:
 * lubridate
