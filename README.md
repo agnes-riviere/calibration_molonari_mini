@@ -95,7 +95,7 @@ Ce fichier contient nom du fichier d'enregistrement	differentiel de charge [cm]
 0_plot_raw.R : ce n'est pas un fichier d'analyse mais il permet de creer les figures des mesures utilisees pour la calibration	
 
 
-Il est important de vérifier que les données sont correct<b>es c'est à dire que :
+<b> Il est important de vérifier que les données sont correctes c'est à dire que : <\b>
 * il est important d'utiliser le bon format des dates
 * le séparateur de champs doit être des virules
 * le noms des fichiers ne doit pas contenir de caractères spéciaux c'est à dire "-",",","é",""",.......
