@@ -94,6 +94,7 @@ Ce fichier contient nom du fichier d'enregistrement	differentiel de charge [cm]
 ###  Vérifier les données brutes
 0_plot_raw.R : ce n'est pas un fichier d'analyse mais il permet de creer les figures des mesures utilisees pour la calibration	
 
+
 Il est important de vérifier que les données sont correct<b>es c'est à dire que :
 * il est important d'utiliser le bon format des dates
 * le séparateur de champs doit être des virules
@@ -113,6 +114,12 @@ Il est important de vérifier que les données sont correct<b>es c'est à dire q
 
 * Ce dossier contient les donnees formattees : 4 colonnes (dates, tension, deltaH, temperature)
 * Ces donnees peuvent ensuite etre traitees a la main pour regler les eventuels problemes (filtrage des series en chambre, reglage de l'offset).
+* A l’issue du script 1\_rawToFormatted.R l’ensemble des données sont enregistrées dans le dossier 2\_data\_formatted, sous une forme homogénéisée. Il est maintenant possible de faire quelques modifications sur les données, si nécessaire. Plusieurs types de modifications peuvent être envisagées :
+
+1. S’il y a un problème dans l’enregistrement, on peut enlever à la main la partie problématique ou tronquer l’enregistrement. Les plots dessinés par 0\_plot\_raw.R sont ont été conçus pour aider cette étape.
+2. Dans ce cas, noter les modifications effectuées à la main dans un fichier texte intitulé modifications.txt et enregistré dans le même dossier que les données formatées.
+3.  Enregistrer les nouvelles données dans un fichier du même nom suivi de "\_modif".
+4. Filtrage du signal enregistré dans la chambre climatique. Une régression linéaire de la tension enregistrée est calculée pour chaque pente de température. Le script 2\_filterClimaticChamber peut être utilisé pour les régressions linéaires. Suite à cette étape, les noms de fichiers se terminent par "flt.csv".
 
 2) 1bis_filterClimaticChamber.R 
 
