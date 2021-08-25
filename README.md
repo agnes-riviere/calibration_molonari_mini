@@ -3,7 +3,7 @@
 % Agnes Riviere agnes.riviere@mines-paristech.fr et Karina Cucchi
 # Attention
 Les noms des capteurs de pressions doivent tous commencer par un "p".
-La calibration doit être effectuée selon le protocole suivant [protocole_calibration.md](protocole_calibration.md)
+La calibration doit être effectuée selon le protocole suivant [protocole_calibration.md](protocole_calibration.md). Les données doivent être stockées comme l'indique le protocole
 ## Installation de librairies
 Ces scripts nécessitent l'installation de Rstudio et des packages suivant:
 * lubridate
@@ -94,7 +94,7 @@ Ce fichier contient nom du fichier d'enregistrement	differentiel de charge [cm]
 ###  Vérifier les données brutes
 0_plot_raw.R : ce n'est pas un fichier d'analyse mais il permet de creer les figures des mesures utilisees pour la calibration	
 
-Il est important de vérifier que les données sont correctes c'est à dire que :
+Il est important de vérifier que les données sont correct<b>es c'est à dire que :
 * il est important d'utiliser le bon format des dates
 * le séparateur de champs doit être des virules
 * le noms des fichiers ne doit pas contenir de caractères spéciaux c'est à dire "-",",","é",""",.......
@@ -135,7 +135,7 @@ Il est important de vérifier que les données sont correctes c'est à dire que 
 	
 
 ## Traitement des données
-* 3_processed_data contient un fichier par capteur avec toutes les donnees qui vont servir aux relations lineaires de la calibration.
+* 3_processed_data contient un fichier par capteur avec to<b>utes les donnees qui vont servir aux relations lineaires de la calibration.
 	Le but de cette premiere etape est de mettre de cote les donnees qui ne seront pas exploitables pour les calibrations.
 
 	
