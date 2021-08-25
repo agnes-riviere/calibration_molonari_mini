@@ -95,7 +95,7 @@ Ce fichier contient nom du fichier d'enregistrement	differentiel de charge [cm]
 0_plot_raw.R : ce n'est pas un fichier d'analyse mais il permet de creer les figures des mesures utilisees pour la calibration	
 
 
-<b> Il est important de vérifier que les données sont correctes c'est à dire que : <\b>
+<b> Il est important de vérifier que les données sont correctes c'est à dire que : </b>
 * il est important d'utiliser le bon format des dates
 * le séparateur de champs doit être des virules
 * le noms des fichiers ne doit pas contenir de caractères spéciaux c'est à dire "-",",","é",""",.......
@@ -128,7 +128,7 @@ Ce fichier contient nom du fichier d'enregistrement	differentiel de charge [cm]
 * enregistre les coefficients des calibrations U-T dans calib/[capteur]/intermediate
 * sortie fichier filtré
 	
-3) 1bis2_arrangeOffset.R : pour certains capteurs, arranger l'offset des series U-T de maniere a recaler avec la relation U-H
+3) 1bis2_arrangeOffset.R : pour c<b>ertains capteurs, arranger l'offset des series U-T de maniere a recaler avec la relation U-H
 * Le numero du capteur doit être indiqué dans l'entete du fichier ligne 8 ex: sensor = 'p3'
 4) 1ter_plotFormatted.R 
  * plot les séries correspondant aux données dans 2_formatted_data et enregistre dans plots/
