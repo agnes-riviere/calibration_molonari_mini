@@ -224,4 +224,4 @@ A l’issue du script 1\_rawToFormatted.R l’ensemble des données sont enregis
 4. Filtrage du signal enregistré dans la chambre climatique. Une régression linéaire de la tension enregistrée est calculée pour chaque pente de température. Le script 2\_filterClimaticChamber peut être utilisé pour les régressions linéaires. Suite à cette étape, les noms de fichiers se terminent par "flt.csv".
 5.  Recalage des offsets décalés entre la courbe de calibration U-H et les courbes U-T.
 # 8.**Calcul des courbes de calibration**
-Les calculs sont faits par les scripts R. Un readme.txt détaille les différentes étapes de traitement jusqu’à l’obtention des coefficients de calibration. Les coefficients de calibration sont disponibles dans le dossier calibration/calib.
+Les calculs sont faits par les scripts R. Le [README.md](README.md).readme.txt détaille les différentes étapes de traitement jusqu’à l’obtention des coefficients de calibration. Les coefficients de calibration sont disponibles dans le dossier calibration/calib.
