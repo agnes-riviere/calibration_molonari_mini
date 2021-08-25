@@ -128,7 +128,7 @@ Ce fichier contient nom du fichier d'enregistrement	differentiel de charge [cm]
 * enregistre les coefficients des calibrations U-T dans calib/[capteur]/intermediate
 * sortie fichier filtré
 	
-3) 1bis2_arrangeOffset.R : pour c<b>ertains capteurs, arranger l'offset des series U-T de maniere a recaler avec la relation U-H
+3) 1bis2_arrangeOffset.R : pour certains capteurs, arranger l'offset des series U-T de maniere a recaler avec la relation U-H
 * Le numero du capteur doit être indiqué dans l'entete du fichier ligne 8 ex: sensor = 'p3'
 4) 1ter_plotFormatted.R 
  * plot les séries correspondant aux données dans 2_formatted_data et enregistre dans plots/
@@ -142,7 +142,7 @@ Ce fichier contient nom du fichier d'enregistrement	differentiel de charge [cm]
 	
 
 ## Traitement des données
-* 3_processed_data contient un fichier par capteur avec to<b>utes les donnees qui vont servir aux relations lineaires de la calibration.
+* 3_processed_data contient un fichier par capteur avec toutes les donnees qui vont servir aux relations lineaires de la calibration.
 	Le but de cette premiere etape est de mettre de cote les donnees qui ne seront pas exploitables pour les calibrations.
 
 	
