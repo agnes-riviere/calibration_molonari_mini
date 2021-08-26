@@ -215,7 +215,7 @@ Figure  SEQ Figure \\* ARABIC 4 - Report des différentiels de charge pour chacu
 
 ![](Aspose.Words.b00ec4d5-1e5d-479a-9442-4939d53b6ee2.005.png)
 
-Figure  SEQ Figure \\* ARABIC 5 – Exemple des fichiers correspondant à l’expérience en chambre climatique à l’issue des étapes du paragraphe  REF \_Ref462300368 \n \h 5.1. Les fichiers lus par le script R 1\_rawToFormatted.R est l’ensemble des fichiers csv.
+Figure   5 – Exemple des fichiers correspondant à l’expérience en chambre climatique à l’issue des étapes du paragraphe 5.1. Les fichiers lus par le script R 1\_rawToFormatted.R est l’ensemble des fichiers csv.
 # 7. **Prétraitement manuel**
 A l’issue du script 1\_rawToFormatted.R l’ensemble des données sont enregistrées dans le dossier 2\_data\_formatted, sous une forme homogénéisée. Il est maintenant possible de faire quelques modifications sur les données, si nécessaire. Plusieurs types de modifications peuvent être envisagées :
 
