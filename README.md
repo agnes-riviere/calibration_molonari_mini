@@ -79,7 +79,11 @@ Ce fichier contient nom du fichier d'enregistrement	differentiel de charge [cm]
     * 	ex:  p520_2016-02-22_calibUH
 
 
-* Le fichier 	excel pn°_capteur_annee_mois_jour_calibUH doit contenir 4 colonnes : hauteur droite(nappe), hauteur gauche (riviere), deltaH, tension mesurre (attention pas d'accent)
+* Le fichier 	excel pn°_capteur_annee_mois_jour_calibUH doit contenir 4 colonnes : hauteur droite(nappe), hauteur gauche (riviere), deltaH, tension mesurre (attention pas d'accent). L'entête du fichier doit être rigoureusement
+		
+		* 	hauteur droite ,hauteur gauche ,deltaH,tension
+* Les données doivent être sous cette forme :
+		. 	0.2,0.4,-0.2,1.20147
 
 
 * Le fichier extrait de HOBOWARE doit se nommer ex : p537_2019_02_27_calibUH_enregistrement l'ordre est important n° de ligne, date, tension, temperature		
