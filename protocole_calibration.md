@@ -183,13 +183,13 @@ Figure  SEQ Figure \\* ARABIC 2 - Dispositif expérimental pour la calibration t
 4.  Dans le dossier /data/1\_raw\_data/pxxx/pxxx\_YYYY-etc, s’assurer que sont présents :
  * les fichiers .hobo des enregistrements ;
   * le fichier Excel de tableau de bord avec le 1e onglet rempli complètement.
-1. # **Traitement des données enregistrées**
+#  6. **Traitement des données enregistrées**
 Les données enregistrées lors des calibrations détaillées ci-dessus sont ensuite traitées par des scripts R pour arriver établir la relation entre tension mesurée, charge différentielle appliquée et température.
 
 Le post-traitement des enregistrements est détaillé dans ce paragraphe.
 
 Le dossier calibration contient toutes les fichiers relatifs à la calibration des capteurs. Comme expliqué dans les paragraphes précédents, **les données brutes sont enregistrées dans le dossier calibration/data/1\_raw\_data**. Les scripts se trouvent dans calibration/scripts\_R.
-# 6. **Mise en forme des données**
+# 7. **Mise en forme des données**
 Pour les deux types d’étalonnage (tension-charge différentielle et tension-température), les enregistrements sont contenus dans des fichiers hobo. Il faut donc les convertir en fichiers csv lisibles par les scripts R.
 
 1. Pour chacun des fichiers .hobo, dans Hoboware, faire File > Export Table Data … Enregistrer le csv dans le même dossier que le fichier hobo correspondant, et garder le même nom de fichier (seule l’extension change de .hobo à .csv).
@@ -216,7 +216,7 @@ Figure  SEQ Figure \\* ARABIC 4 - Report des différentiels de charge pour chacu
 ![](Aspose.Words.b00ec4d5-1e5d-479a-9442-4939d53b6ee2.005.png)
 
 Figure   5 – Exemple des fichiers correspondant à l’expérience en chambre climatique à l’issue des étapes du paragraphe 5.1. Les fichiers lus par le script R 1\_rawToFormatted.R est l’ensemble des fichiers csv.
-# 7. **Prétraitement manuel**
+# 8. **Prétraitement manuel**
 A l’issue du script 1\_rawToFormatted.R l’ensemble des données sont enregistrées dans le dossier 2\_data\_formatted, sous une forme homogénéisée. Il est maintenant possible de faire quelques modifications sur les données, si nécessaire. Plusieurs types de modifications peuvent être envisagées :
 
 1. S’il y a un problème dans l’enregistrement, on peut enlever à la main la partie problématique ou tronquer l’enregistrement. Les plots dessinés par 0\_plot\_raw.R sont ont été conçus pour aider cette étape.
