@@ -32,10 +32,10 @@ L’étalonnage tension – pression différentielle se fait sur une rampe d'ét
 - L’ordinateur de terrain et le câble USB permettant de connecter le Hobo à l’ordinateur (normalement dans la pochette de l’ordinateur de terrain);
 - Un entonnoir.
 
-## Protocole expérimental**
+## Protocole expérimental
 
 ### Préparation
-  1. Installer la planche en bois verticalement, connecter les tubes de la planche en bois aux sorties de la boîte (voir  REF \_Ref430256416 \h Figure 1).
+  1. Installer la planche en bois verticalement, connecter les tubes de la planche en bois aux sorties de la boîte (voir Figure 1).
   2. Connecter les 2 petits tubes du capteur de pression aux connecteurs présents sur la boîte. Pour cela, remplir d’eau chaque petit tube à l’aide de la seringue, en faisant attention à ne pas laisser de bulles d’air dans les tubes. Puis enfoncer les petits tubes dans les connecteurs.
   3. Ajouter une dizaine de centimètres d’eau dans chacun des tubes de la planche en bois. S’aider de l’entonnoir.
   4. Allumer l’ordinateur de terrain et lancer le logiciel Hoboware de l’ordinateur de terrain. Connecter le Hobo a l’ordinateur à l’aide du câble USB.
