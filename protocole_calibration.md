@@ -14,9 +14,9 @@ Pour chaque capteur, il est nécessaire de faire au moins:
 
 Le nom des capteurs de pression (p505 etc) est indiqué sur chaque capteur sur un scotch.
 
-Les fichiers liés à la calibration sont enregistrés dans le dossier calibration_molonari_mini/data. Le fichier Excel *etalCapteursPress\_tableauDeBord* permet de suivre les étalonnages qui ont été faits et ceux qui restent à faire. Les fichiers hobo et csv contiennent les enregistrements des expériences et sont enregistrés dans des dossiers correspondant aux différents capteurs. Ces dossiers contiennent également les fichiers Excel des calibrations U-H.
+Les fichiers liés à la calibration sont enregistrés dans le dossier calibration_molonari_mini/data. Les fichiers hobo et csv contiennent les enregistrements des expériences et sont enregistrés dans des dossiers correspondant aux différents capteurs. Ces dossiers contiennent également les fichiers Excel des calibrations U-H.
 
-Les données des expériences sont ensuite intégrées dans le dossier capteurs\_pression/calibration, qui en plus des données des expériences détaillées dans ce fichier de protocole contient les scripts de post-traitement, des figures et les coefficients de calibration, but final de ces expériences. L’ensemble des fichiers est stocké dans le dossier calibration_molonari_mini/data
+Les données des expériences sont ensuite intégrées dans le dossiercalibration_molonari_mini/data/1_raw_data/, qui en plus des données des expériences détaillées dans ce fichier de protocole contient les scripts de post-traitement, des figures et les coefficients de calibration, but final de ces expériences. 
 
 **Il est important de suivre les étapes précisément pour permettre un traitement efficace des données par la suite.**
 #  3. **Étalonnage tension – pression différentielle**
