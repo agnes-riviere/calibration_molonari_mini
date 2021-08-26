@@ -92,7 +92,7 @@ La remise en fonctionnement de la chambre climatique de la halle a permis de fai
   *  Un voltmètre
   *  Des piles pour le Hobo
 *  Deux bouts de tuyaux de diamètre 16 mm d’une vingtaine de centimètres chacun ;
-* Une ficelle, deux colliers, 2 bouchons d’oreille (voir  REF \_Ref430347103 \h  \\* MERGEFORMAT Figure 2) ;
+* Une ficelle, deux colliers, 2 bouchons d’oreille (voir Figure 2) ;
 - Une grande caisse bleue pour couvrir le dispositif à l’extérieur.
  ### **Protocole expérimental**
 
@@ -140,7 +140,7 @@ Prévoir 2h-2h30. Il est plus efficace de lancer plusieurs calibrations en même
   * Un voltmètre
   * Des piles pour le Hobo
 5. Deux bouts de tuyaux d’une vingtaine de centimètres chacun ;
-6. - Une ficelle, deux colliers, 2 bouchons d’oreille (voir  REF \_Ref430347103 \h  \\* MERGEFORMAT Figure 2) ;
+6. - Une ficelle, deux colliers, 2 bouchons d’oreille (voir Figure 2) ;
 7. Une grande caisse bleue pour couvrir le dispositif à l’extérieur.
 
 ### **Protocole expérimental**
@@ -155,7 +155,7 @@ Prévoir 2h-2h30. Il est plus efficace de lancer plusieurs calibrations en même
 8. Vérifier l’état de la pile du Hobo. S’il n’y a pas de pile dans le Hobo, en mettre. Changer de pile ou de Hobo si la pile est charge à moins de 80%.
 9. Brancher le Hobo au capteur de pression. Le canal 1 est la pression, le canal 2 est la température. Deux canaux d’enregistrement sur 4 sont utilisés.
 10. A partir du logiciel Hoboware, lancer l’enregistrement de la pression et de la température. Pour cela, aller dans Périphérique > Lancer. Le canal 1 est la pression (Câble Stéréo 0-2.5V), le canal 2 est la température (). Décocher les canaux 3 et 4. Sélectionner un *pas de temps de **15 minutes*** pour l’enregistrement.
-11. Débrancher le Hobo de l’ordinateur, placer le dispositif capteur de pression + Hobo à l’extérieur de la halle, selon la  REF \_Ref430347103 \h  \\* MERGEFORMAT Figure 2. 
+11. Débrancher le Hobo de l’ordinateur, placer le dispositif capteur de pression + Hobo à l’extérieur de la halle, selon la  Figure 2. 
 12. Compléter les hauteurs d’eau dans chacun des tubes jusqu’à arriver à une différence environ égale à la valeur cible indiquée dans le document Excel *etalCapteursPress\_tableauDeBord*. Boucher les tubes avec les bouchons d’oreille pour éviter que des détritus s’introduisent dans les tubes.
 13. Compléter le document Excel *etalCapteursPress\_tableauDeBord* : dans la case correspondant au capteur traité, reporter les hauteurs d’eau mesurées, et vérifier que le différentiel de hauteur calculé est proche de la valeur cible.
 
@@ -175,7 +175,7 @@ Laisser l’enregistrement pendant <b>3-4 jours</b>.
 
 ![](Aspose.Words.b00ec4d5-1e5d-479a-9442-4939d53b6ee2.002.jpeg "IMG\_9007")
 
-Figure  SEQ Figure \\* ARABIC 2 - Dispositif expérimental pour la calibration tension-température à différentiel de charge constant
+Figure 2 - Dispositif expérimental pour la calibration tension-température à différentiel de charge constant
 # 5.  Suite à l’étalonnage tension-température
 1. Remplir le fichier de suivi des capteurs Suivi\_capteurs\_pression.xlsx, situe dans le svn data-hz/Avenelles/raw\_data/DESC\_data/DATA\_SENSOR/capteurs\_pression :
 2.  Dans l’onglet calibrations, remplir le type de calibration effectue pour le capteur ;
@@ -191,7 +191,7 @@ Pour les deux types d’étalonnage (tension-charge différentielle et tension-t
 
 2. Pour les étalonnages tension-charge :
 
- * Transformer l’Excel en fichier csv lisible par les scripts R. Conformément a la description du paragraphe  REF \_Ref462238442 \r \h  \\* MERGEFORMAT 3, la 3e colonne doit contenir le différentiel de charge, et la 4e colonne doit contenir la tension mesurée correspondante. 
+ * Transformer l’Excel en fichier csv lisible par les scripts R. Conformément a la description du paragraphe 3, la 3e colonne doit contenir le différentiel de charge, et la 4e colonne doit contenir la tension mesurée correspondante. 
  * Transformer le fichier .hobo d’enregistrement en fichier .csv. Le nom du fichier d’enregistrement doit se terminer par "\_enregistrement.csv".
 
 ![](Aspose.Words.b00ec4d5-1e5d-479a-9442-4939d53b6ee2.003.png)
@@ -201,7 +201,7 @@ Figure  3 – Fichiers correspondant à la calibration tension-charge pour le ca
 3. Pour les étalonnages tension-température, quelques étapes supplémentaires sont nécessaires.
 
    *  Dans le fichier csv, retirer les parties de l’enregistrement ne correspondant pas à l’expérience (par exemple, dans la chambre climatique, retirer ce qui a été enregistré en dehors du fonctionnement de la chambre).
-   * Reporter les différentiels de charge dans un nouvel onglet du document Excel, en face du nom du fichier d’enregistrement correspondant (voir  REF \_Ref462300596 \h Figure 4). Si l’enregistrement doit être ignoré pour une raison ou une autre, indiquer « invalide » à la place du différentiel de charge. Exporter ensuite cet onglet en csv, dont le nom contient « tableauDeBord ». Il est important de faire cette étape correctement, car c’est ce fichier qui est ensuite lu par les scripts.
+   * Reporter les différentiels de charge dans un nouvel onglet du document Excel, en face du nom du fichier d’enregistrement correspondant (voir Figure 4). Si l’enregistrement doit être ignoré pour une raison ou une autre, indiquer « invalide » à la place du différentiel de charge. Exporter ensuite cet onglet en csv, dont le nom contient « tableauDeBord ». Il est important de faire cette étape correctement, car c’est ce fichier qui est ensuite lu par les scripts.
    * Une fois que ces différentes étapes ont été réalisées, lancer le script R 1\_rawToFormatted.R qui lit les différents fichiers de données et met tout sous une forme homogénéisée, dans le dossier 2\_formatted\_data.
 
 ![](Aspose.Words.b00ec4d5-1e5d-479a-9442-4939d53b6ee2.004.png)
