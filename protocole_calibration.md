@@ -73,7 +73,7 @@ Les étalonnages tension-température servent à établir la relation entre tens
 Deux méthodes d’étalonnage ont été développées, une méthode en chambre climatique et une méthode en extérieur. Elles sont décrites dans les 2 paragraphes qui suivent. La méthode en chambre climatique est préférable car elle permet de contrôler la température ambiante.
 
 ***Important :*** **Les métadonnées relatives à chaque étalonnage U-T doivent être reportées dans un tableau de bord Excel.** Une version de référence nommée pxxx\_YYYY-mm-dd\_UTxxxxxxxx\_tableauDeBord est disponible dans le dossier 1\_raw\_data/modele. Remplacer le premier champ de xxx par le numéro correspondant de capteur, le champ YYYY-mm-dd par la date de début d’expérience, le dernier champ xxxxx par "chambre" ou "exterieur".
- ## 1. **Étalonnage en chambre climatique**
+ ## 4.1. **Étalonnage en chambre climatique**
 La remise en fonctionnement de la chambre climatique de la halle a permis de faire évoluer les protocoles de calibration. La chambre climatique permet de contrôler la température ambiante et présente donc un avantage certain par rapport à la calibration en extérieur ; cependant la chambre climatique vibre lors de son fonctionnement et bruite le signal de tension mesuré.
 
 **Note importante :** Pour éviter que la 1e expérience ne soit pas valide parce que les tuyaux de déforment, préparer le dispositif la veille, mesurer les hauteurs d’eau et lancer la chambre climatique le lendemain uniquement.
@@ -119,7 +119,7 @@ La remise en fonctionnement de la chambre climatique de la halle a permis de fai
 11. Refaire ces étapes pour les deux autres différentiels de pression.
 
 Lorsque les 3 expériences ont été réalisées, passer aux étapes du paragraphe  REF \_Ref469048893 \r \h 4.3
- ## 2. **Étalonnage en extérieur**
+ ## 4.2. **Étalonnage en extérieur**
 L’étalonnage à vide se fait en extérieur, pour profiter des variations de température jour-nuit. Chaque étalonnage à une valeur cible de différentielle de charge (dévier de cette valeur cible de quelques mm n’est pas un problème, voir 1.e). Voir les valeurs cibles dans le document Excel *etalCapteursPress\_tableauDeBord*.
 
 ### Temps nécessaire
@@ -202,7 +202,7 @@ Figure  3 – Fichiers correspondant à la calibration tension-charge pour le ca
 
 ![](Aspose.Words.b00ec4d5-1e5d-479a-9442-4939d53b6ee2.004.png)
 
-Figure  SEQ Figure \\* ARABIC 4 - Report des différentiels de charge pour chacun des enregistrements U-T dans le 2e onglet du fichier p505\_2016-08\_UTChambre\_rampe\_tableauDeBord.xlsx. Chaque ligne correspond à un enregistrement : la colonne A contient le nom du fichier correspondant, la colonne B contient le différentiel de charge appliqué. Cet onglet doit ensuite être enregistré en format csv, il sera lu par le script 1\_rawToFormatted.R.
+Figure 4 - Report des différentiels de charge pour chacun des enregistrements U-T dans le 2e onglet du fichier p505\_2016-08\_UTChambre\_rampe\_tableauDeBord.xlsx. Chaque ligne correspond à un enregistrement : la colonne A contient le nom du fichier correspondant, la colonne B contient le différentiel de charge appliqué. Cet onglet doit ensuite être enregistré en format csv, il sera lu par le script 1\_rawToFormatted.R.
 
 ![](Aspose.Words.b00ec4d5-1e5d-479a-9442-4939d53b6ee2.005.png)
 
