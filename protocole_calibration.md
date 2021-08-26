@@ -176,7 +176,7 @@ Laisser l’enregistrement pendant <b>3-4 jours</b>.
 ![](Aspose.Words.b00ec4d5-1e5d-479a-9442-4939d53b6ee2.002.jpeg "IMG\_9007")
 
 Figure  SEQ Figure \\* ARABIC 2 - Dispositif expérimental pour la calibration tension-température à différentiel de charge constant
-# 5.  **Suite à l’étalonnage tension-température**
+# 5.  Suite à l’étalonnage tension-température
 1. Remplir le fichier de suivi des capteurs Suivi\_capteurs\_pression.xlsx, situe dans le svn data-hz/Avenelles/raw\_data/DESC\_data/DATA\_SENSOR/capteurs\_pression :
 2.  Dans l’onglet calibrations, remplir le type de calibration effectue pour le capteur ;
 3.  Dans l’onglet correspondant au capteur calibre, reporter les détails des calibrations et éventuellement les anomalies repérées lors des enregistrements.
@@ -201,7 +201,7 @@ Pour les deux types d’étalonnage (tension-charge différentielle et tension-t
 
 ![](Aspose.Words.b00ec4d5-1e5d-479a-9442-4939d53b6ee2.003.png)
 
-Figure  SEQ Figure \\* ARABIC 3 – Fichiers correspondant à la calibration tension-charge pour le capteur p506. Le script 1\_rawToFormatted.R lit les 2 fichiers .csv.
+Figure  3 – Fichiers correspondant à la calibration tension-charge pour le capteur p506. Le script 1\_rawToFormatted.R lit les 2 fichiers .csv.
 
 3. Pour les étalonnages tension-température, quelques étapes supplémentaires sont nécessaires.
 
