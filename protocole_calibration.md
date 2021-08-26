@@ -9,8 +9,8 @@ Ainsi, pour traduire la tension électrique mesurée sur le terrain en pression 
 # 2.  **Introduction aux expériences**
 Pour chaque capteur, il est nécessaire de faire au moins:
 
-* Un étalonnage tension – pression différentielle (paragraphe  REF \_Ref462238442 \n \h 3);
-* Trois étalonnages en charge constante, qui peuvent s’effectuer en extérieur ou en chambre climatique (paragraphe  REF \_Ref462238479 \n \h 4).
+* Un étalonnage tension – pression différentielle (Partie 3);
+* Trois étalonnages en charge constante, qui peuvent s’effectuer en extérieur ou en chambre climatique (Partie 4).
 
 Le nom des capteurs de pression (p505 etc) est indiqué sur chaque capteur sur un scotch.
 
