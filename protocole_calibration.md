@@ -65,9 +65,8 @@ Une fois que quelques points ont été effectués, créer un graphe sous Excel q
   c. Ouvrir le fichier hobo avec Hoboware avec Fichier > Ouvrir un fichier de données
   d. Exporter en faisant Fichier > Données de Tableau d’exportation, cliquer sur Exporter, et sélectionner “csv” comme type de fichier. Garder le même nom que le fichier hobo.
   e. Mettre à jour le document Excel etalCapteursPress\_tableauDeBord en ajoutant la date de l’expérience et le nom de la personne.
-  f. Mettre à jour le svn data-hz. (ou envoyer les fichiers a karina.cucchi@gmail.com)
-  g. Remplacer le fichier Excel etalCapteursPress\_tableauDeBord par sa nouvelle version.
-  h.Ajouter les fichiers hobo, csv et Excel de calibration dans le dossier correspondant au capteur.
+  f. Remplacer le fichier Excel etalCapteursPress\_tableauDeBord par sa nouvelle version.
+  g.Ajouter les fichiers hobo, csv et Excel de calibration dans le dossier correspondant au capteur.
 #  4. Étalonnage tension – température
 Les étalonnages tension-température servent à établir la relation entre tension mesurée et variation de température, à pression différentielle constante.
 
@@ -168,9 +167,6 @@ Laisser l’enregistrement pendant <b>3-4 jours</b>.
   * Exporter les données mesurées par le hobo dans un fichier csv. Pour cela:
     * Ouvrir le fichier hobo avec Hoboware avec Fichier > Ouvrir un fichier de données
     * Exporter en faisant Fichier > Données de Tableau d’exportation, cliquer sur Exporter, et sélectionner “csv” comme type de fichier. Garder le même nom que le fichier hobo.
-  * Mettre à jour le document Excel *etalCapteursPress\_tableauDeBord* en ajoutant la date de l’expérience et le nom de la personne.
-  * Mettre à jour le svn data-hz. (ou envoyer les fichiers a karina.cucchi@gmail.com)
-    * Remplacer le fichier Excel *etalCapteursPress\_tableauDeBord* par sa nouvelle version.
     * Ajouter les fichiers hobo et csv dans le dossier correspondant au capteur.
 
 ![](Aspose.Words.b00ec4d5-1e5d-479a-9442-4939d53b6ee2.002.jpeg "IMG\_9007")
