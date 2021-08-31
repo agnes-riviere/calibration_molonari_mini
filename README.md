@@ -1,6 +1,11 @@
  Calibration molonari mini
  ==
 % Agnes Riviere agnes.riviere@mines-paristech.fr et Karina Cucchi
+
+# Réferences
+* Cucchi, K., Rivière, A., Flipo, N., A. Baudin, A. Berrhouma, F. Rejiba & Rubin, Y. (2018). LOMOS-mini: a coupled pressure and temperature system for local estimations of water and heat exchanges and sediment properties in streambeds. Journal of hydrology, 561, 1037-104. ⟨10.1016/j.jhydrol.2017.10.074⟩.
+
+
 # Attention
 Les noms des capteurs de pressions doivent tous commencer par un "p".
 La calibration doit être effectuée selon le protocole suivant [protocole_calibration.md](protocole_calibration.md). Les données doivent être stockées comme l'indique le protocole
