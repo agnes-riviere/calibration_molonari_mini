@@ -22,7 +22,7 @@ Les données des expériences sont ensuite intégrées dans le dossiercalibratio
 #  3. **Étalonnage tension – pression différentielle**
 L’étalonnage tension – pression différentielle se fait sur une rampe d'étalonnage. Elle consiste à établir la relation entre pression différentielle et tension mesurée, pour une température constante.
 
-![C:\Users\Karina\AppData\Local\Microsoft\Windows\INetCache\Content.Word\2015-07-15\_Calibration capteurs de pression\_1.jpg](Aspose.Words.b00ec4d5-1e5d-479a-9442-4939d53b6ee2.001.jpeg) Figure 1 - Dispositif expérimental pour la calibration des capteurs de pression.
+![1.jpg](Aspose.Words.b00ec4d5-1e5d-479a-9442-4939d53b6ee2.001.jpeg) Figure 1 - Dispositif expérimental pour la calibration des capteurs de pression.
 
 ## Matériel nécessaire
 
@@ -33,6 +33,15 @@ L’étalonnage tension – pression différentielle se fait sur une rampe d'ét
 - Un entonnoir.
 
 ## Protocole expérimental
+### Conguration Hoboware
+La date doit être formaté en Mois Jours Année (voir Figure 2)
+
+![IMG_3944.jpg](IMG_3944.jpg) Figure 2 - Configuration des dates du logiciel Hoboware.
+
+Les untités doivent être en système international (Voir figure 3)
+
+![IMG_3942.jpg](IMG_3942.jpg) Figure 3 - Configuration des unités du logiciel Hoboware
+
 
 ### Préparation
   1. Installer la planche en bois verticalement, connecter les tubes de la planche en bois aux sorties de la boîte (voir Figure 1).
@@ -40,7 +49,11 @@ L’étalonnage tension – pression différentielle se fait sur une rampe d'ét
   3. Ajouter une dizaine de centimètres d’eau dans chacun des tubes de la planche en bois. S’aider de l’entonnoir. Il est néssaire de débuter avec la même hauteur d'eau dans les deux tubes (droite et gauche)
   4. Allumer l’ordinateur de terrain et lancer le logiciel Hoboware de l’ordinateur de terrain. Connecter le Hobo a l’ordinateur à l’aide du câble USB.
   5. Vérifier l’état de la pile du Hobo en allant dans “État du Périphérique”. Si la pile est trop faible (en dessous de 50%), changer la pile du Hobo ou changer de Hobo.
-  6. A partir du logiciel Hoboware, lancer l’enregistrement de la pression et de la température (deux canaux d’enregistrement sur 4 sont utilisés). Le capteur de pression doit être sur le canal 1 et nommé "tension" et le capteur de température doit être sur le canal 2 et il doit se nommer "température". Pour cela, aller dans Périphérique > Lancer. Sélectionner un pas de temps de 30 secondes pour l’enregistrement.
+  6. A partir du logiciel Hoboware, lancer l’enregistrement de la pression et de la température (deux canaux d’enregistrement sur 4 sont utilisés). Le capteur de pression doit être sur le canal 1 et nommé "tension" et le capteur de température doit être sur le canal 2 et il doit se nommer "température". Pour cela, aller dans Périphérique > Lancer. Sélectionner un pas de temps de 30 secondes pour l’enregistrement (voir Figure 4).
+ 
+ 
+![IMG_3947.jpg](IMG_3947.jpg) Figure 4 - Configuration des Hobos pour la calibration
+ 
   7. Noter sur le capteur le nom des tubes sur le capteur (droite et gauche). 
   8. Créer un fichier Excel de calibration, le nommer [nomDuCapteur]\_calibUH, par exemple p505\_calibUH. L’enregistrer dans Dcalibration_molonari_mini/data/1_raw_data/. La première colonne de ce fichier contiendra les hauteurs d’eau dans le tube gauche. La deuxième colonne contiendra les hauteurs d’eau dans le tube de droite. La troisième colonne contiendra le différentiel de hauteur d’eau, la convention est “droite moins gauche” (colonne B – colonne A). La quatrième colonne contiendra les tensions mesurées par le Hobo.
   
