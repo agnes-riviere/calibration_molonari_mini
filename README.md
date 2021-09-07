@@ -1,8 +1,14 @@
- calibration_molonari_mini
+ Calibration molonari mini
  ==
 % Agnes Riviere agnes.riviere@mines-paristech.fr et Karina Cucchi
+
+# Réferences
+* Cucchi, K., Rivière, A., Flipo, N., A. Baudin, A. Berrhouma, F. Rejiba & Rubin, Y. (2018). LOMOS-mini: a coupled pressure and temperature system for local estimations of water and heat exchanges and sediment properties in streambeds. Journal of hydrology, 561, 1037-104. ⟨10.1016/j.jhydrol.2017.10.074⟩.
+
+
 # Attention
 Les noms des capteurs de pressions doivent tous commencer par un "p".
+La calibration doit être effectuée selon le protocole suivant [protocole_calibration.md](protocole_calibration.md). Les données doivent être stockées comme l'indique le protocole
 ## Installation de librairies
 Ces scripts nécessitent l'installation de Rstudio et des packages suivant:
 * lubridate
@@ -78,7 +84,11 @@ Ce fichier contient nom du fichier d'enregistrement	differentiel de charge [cm]
     * 	ex:  p520_2016-02-22_calibUH
 
 
-* Le fichier 	excel pn°_capteur_annee_mois_jour_calibUH doit contenir 4 colonnes : hauteur droite(nappe), hauteur gauche (riviere), deltaH, tension mesurre (attention pas d'accent)
+* Le fichier 	excel pn°_capteur_annee_mois_jour_calibUH doit contenir 4 colonnes : hauteur droite(nappe), hauteur gauche (riviere), deltaH, tension mesurre (attention pas d'accent). L'entête du fichier doit être rigoureusement
+		
+		* 	hauteur droite ,hauteur gauche ,deltaH,tension
+* Les données doivent être sous cette forme :
+		. 	0.2,0.4,-0.2,1.20147
 
 
 * Le fichier extrait de HOBOWARE doit se nommer ex : p537_2019_02_27_calibUH_enregistrement l'ordre est important n° de ligne, date, tension, temperature		
@@ -93,7 +103,8 @@ Ce fichier contient nom du fichier d'enregistrement	differentiel de charge [cm]
 ###  Vérifier les données brutes
 0_plot_raw.R : ce n'est pas un fichier d'analyse mais il permet de creer les figures des mesures utilisees pour la calibration	
 
-Il est important de vérifier que les données sont correctes c'est à dire que :
+
+**Il est important de vérifier que les données sont correctes c'est à dire que :**
 * il est important d'utiliser le bon format des dates
 * le séparateur de champs doit être des virules
 * le noms des fichiers ne doit pas contenir de caractères spéciaux c'est à dire "-",",","é",""",.......
@@ -112,6 +123,12 @@ Il est important de vérifier que les données sont correctes c'est à dire que 
 
 * Ce dossier contient les donnees formattees : 4 colonnes (dates, tension, deltaH, temperature)
 * Ces donnees peuvent ensuite etre traitees a la main pour regler les eventuels problemes (filtrage des series en chambre, reglage de l'offset).
+* A l’issue du script 1\_rawToFormatted.R l’ensemble des données sont enregistrées dans le dossier 2\_data\_formatted, sous une forme homogénéisée. Il est maintenant possible de faire quelques modifications sur les données, si nécessaire. Plusieurs types de modifications peuvent être envisagées :
+
+1. S’il y a un problème dans l’enregistrement, on peut enlever à la main la partie problématique ou tronquer l’enregistrement. Les plots dessinés par 0\_plot\_raw.R sont ont été conçus pour aider cette étape.
+2. Dans ce cas, noter les modifications effectuées à la main dans un fichier texte intitulé modifications.txt et enregistré dans le même dossier que les données formatées.
+3.  Enregistrer les nouvelles données dans un fichier du même nom suivi de "\_modif".
+4. Filtrage du signal enregistré dans la chambre climatique. Une régression linéaire de la tension enregistrée est calculée pour chaque pente de température. Le script 2\_filterClimaticChamber peut être utilisé pour les régressions linéaires. Suite à cette étape, les noms de fichiers se terminent par "flt.csv".
 
 2) 1bis_filterClimaticChamber.R 
 
