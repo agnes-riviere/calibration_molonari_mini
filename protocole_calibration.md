@@ -74,12 +74,16 @@ Une fois que quelques points ont été effectués, créer un graphe sous Excel q
 
 7. A la fin de la calibration
   a. Extraire l’enregistrement du hobo (Périphérique > Lecture), confirmer l’arrêt de l’enregistrement. Enregistrer les enregistrements du Hobo sur l’ordinateur de terrain dans un fichier .hobo, dans le même dossier que le fichier Excel de calibration: calibration_molonari_mini/data/1_raw_data/ [nomDuCapteur]. Nommer le fichier [nomDuCapteur]\_calibUH.hobo. Le nom du capteur est indiqué sur un scotch sur le capteur de pression (et non sur la boîte le contenant).
+  
   b. Exporter les données mesurées par le hobo dans un fichier csv. Pour cela:
-  c. Ouvrir le fichier hobo avec Hoboware avec Fichier > Ouvrir un fichier de données
-  d. Exporter en faisant Fichier > Données de Tableau d’exportation, cliquer sur Exporter, et sélectionner “csv” comme type de fichier. Garder le même nom que le fichier hobo.
-  e. Mettre à jour le document Excel etalCapteursPress\_tableauDeBord en ajoutant la date de l’expérience et le nom de la personne.
-  f. Remplacer le fichier Excel etalCapteursPress\_tableauDeBord par sa nouvelle version.
-  g.Ajouter les fichiers hobo, csv et Excel de calibration dans le dossier correspondant au capteur.
+  
+  b1. Ouvrir le fichier hobo avec Hoboware avec Fichier > Ouvrir un fichier de données
+ 
+ b2. Exporter en faisant Fichier > Données de Tableau d’exportation, cliquer sur Exporter, et sélectionner “csv” comme type de fichier. Garder le même nom que le fichier hobo.
+ 
+ c. Mettre à jour le document Excel etalCapteursPress\_tableauDeBord en ajoutant la date de l’expérience et le nom de la personne.
+ d. Remplacer le fichier Excel etalCapteursPress\_tableauDeBord par sa nouvelle version.
+ e.Ajouter les fichiers hobo, csv et Excel de calibration dans le dossier correspondant au capteur.
 #  4. Étalonnage tension – température
 Les étalonnages tension-température servent à établir la relation entre tension mesurée et variation de température, à pression différentielle constante.
 
