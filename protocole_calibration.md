@@ -124,6 +124,8 @@ La remise en fonctionnement de la chambre climatique de la halle a permis de fai
 8. Remplir également les colonnes dates et personnes.
 9. Fermer la chambre climatique et lancer le programme contenant une rampe allant de 25 à 5°C en 6h et une deuxième rampe faisant le chemin inverse.
 10. Récupération des données
+
+
   a.  A l’ouverture de la chambre climatique, et **avant de déplacer les capteurs**, mesurer les hauteurs d’eau dans les tubes et les reporter sur le tableau Excel. **Si les hauteurs ont changé de manière trop importante, il faut refaire l’expérience**… Sinon, continuer :
   
   b. Lancer le logiciel Hoboware.
