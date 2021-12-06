@@ -125,14 +125,24 @@ La remise en fonctionnement de la chambre climatique de la halle a permis de fai
 9. Fermer la chambre climatique et lancer le programme contenant une rampe allant de 25 à 5°C en 6h et une deuxième rampe faisant le chemin inverse.
 10. Récupération des données
   a.  A l’ouverture de la chambre climatique, et **avant de déplacer les capteurs**, mesurer les hauteurs d’eau dans les tubes et les reporter sur le tableau Excel. **Si les hauteurs ont changé de manière trop importante, il faut refaire l’expérience**… Sinon, continuer :
+  
   b. Lancer le logiciel Hoboware.
+  
   c. Brancher le Hobo a l’ordinateur. 
+  
   d. Extraire l’enregistrement du hobo (Périphérique > Lecture), confirmer l’arrêt de l’enregistrement. Enregistrer les enregistrements du Hobo sur l’ordinateur de terrain dans un fichier .hobo, dans le même dossier que le fichier Excel de calibration: *data / 1\_raw\_data /[nomDuCapteur]*. 
+  
   e. Nommer le fichier *[nomDuCapteur]\_calibUT\_[numéro de l’expérience].hobo*. Attention, le nom du capteur est indiqué sur un scotch sur le capteur de pression. Le numéro de l’expérience est indiqué sur la feuille Excel *etalCapteursPress\_tableauDeBord*.
+  
   f. Exporter les données mesurées par le hobo dans un fichier csv. Pour cela :
+  
   g. Ouvrir le fichier hobo avec Hoboware avec Fichier > Ouvrir un fichier de données
+  
   h. Exporter en faisant Fichier > Données de Tableau d’exportation, cliquer sur Exporter, et sélectionner “csv” comme type de fichier. Garder le même nom que le fichier hobo.
+  
   i.  Mettre à jour le document Excel *etalCapteursPress\_tableauDeBord* en ajoutant la date de l’expérience de fin d’expérience et le nom de la personne.
+  
+  
 11. Refaire ces étapes pour les deux autres différentiels de pression.
 
 Lorsque les 3 expériences ont été réalisées, passer aux étapes du paragraphe  REF \_Ref469048893 \r \h 4.3
