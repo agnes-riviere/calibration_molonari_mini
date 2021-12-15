@@ -75,7 +75,7 @@ Ce fichier contient nom du fichier d'enregistrement	differentiel de charge [cm]
     *		p537_2019_03_08_calibUT_1.csv,1.5
     *		p537_2019_03_11_calibUT_2.csv,-0.2
     *		p537_2019_03_12_calibUT_3.csv,-1.5
-*	Ne pas laisser les entêtes des fichiers (supprimer les deux premières lignes)
+
 
 ### CALIBRATION UH Rampe en bois
 1) Creer un repertoire nommé pn°_capteur_annee_mois_jour_calibUH 
