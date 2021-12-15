@@ -40,7 +40,7 @@ for(iFold in 1:length(folders)){
   
   sub_folders = list.files(paste0(pathToRaw,folders[iFold]),pattern = '^p')
   print(sub_folders)
-  iSubFold = 2
+  iSubFold = 1
   print(sub_folders[iSubFold])
   for(iSubFold in 1:length(sub_folders)){
     
@@ -134,7 +134,7 @@ for(iFold in 1:length(folders)){
                                         list.files(pathDataRaw,pattern = 'tableauDeBord.csv')),
                                  sep=',',header=T,colClasses = 'character')
       
-      if(ncol(dataRaw_i)==1){
+      if(ncol(data_dashboard)==1){
       data_dashboard <- read.csv(paste0(pathDataRaw,'/',
                                         list.files(pathDataRaw,pattern = 'tableauDeBord.csv')),
                                  sep=';',header=T,colClasses = 'character')
