@@ -1,0 +1,10 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Rivière
+    given-names: Agnès
+    orcid:  https://orcid.org/0000-0002-6002-3189 
+title: agnes-riviere/calibration_lomos_mini: V2
+version: V2
+date-released: 2017-12-18
+ DOI: 10.5281/zenodo.5877587 
