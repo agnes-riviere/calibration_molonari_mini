@@ -2,7 +2,7 @@
  ==
 % Agnes Riviere agnes.riviere@mines-paristech.fr et Karina Cucchi
 
-If you use the documents of this directory, please cite it as below." Rivière, A., Calibration_LOMOS_mini,  https://doi.org/10.5281/zenodo.5877587
+If you use the documents, the scripts or the methologies decribed in this directory, please cite it as below." Rivière, A., Calibration_LOMOS_mini,  https://doi.org/10.5281/zenodo.5877587
 
 This directory contains the documents and instructions for the calibration of the LOMOS-mini sensor described in the publication (https://doi.org/10.1016/j.jhydrol.2017.10.074). All the scripts to obtain the coefficients are also given. A readme allows users to discover step by step all the necessary steps.
 
