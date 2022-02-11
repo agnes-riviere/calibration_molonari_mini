@@ -2,6 +2,8 @@
  ==
 % Agnes Riviere agnes.riviere@mines-paristech.fr et Karina Cucchi
 
+Ce dossier contient toute la notice d'étalonnage des capteurs ainsi que les scripts de traitements de l'étalonnage de capteur.
+
 # Réferences
 * Cucchi, K., Rivière, A., Flipo, N., A. Baudin, A. Berrhouma, F. Rejiba & Rubin, Y. (2018). LOMOS-mini: a coupled pressure and temperature system for local estimations of water and heat exchanges and sediment properties in streambeds. Journal of hydrology, 561, 1037-104. ⟨10.1016/j.jhydrol.2017.10.074⟩.
 
