@@ -2,7 +2,9 @@
  ==
 % Agnes Riviere agnes.riviere@mines-paristech.fr et Karina Cucchi
 
-Ce dossier contient toute la notice d'étalonnage des capteurs ainsi que les scripts de traitements de l'étalonnage de capteur.
+If you use the documents of this directory, please cite it as below." Rivière, A., Calibration_LOMOS_mini,  https://doi.org/10.5281/zenodo.5877587
+
+This directory contains the documents and instructions for the calibration of the LOMOS-mini sensor described in the publication (https://doi.org/10.1016/j.jhydrol.2017.10.074). All the scripts to obtain the coefficients are also given. A readme allows users to discover step by step all the necessary steps.
 
 # Réferences
 * Cucchi, K., Rivière, A., Flipo, N., A. Baudin, A. Berrhouma, F. Rejiba & Rubin, Y. (2018). LOMOS-mini: a coupled pressure and temperature system for local estimations of water and heat exchanges and sediment properties in streambeds. Journal of hydrology, 561, 1037-104. ⟨10.1016/j.jhydrol.2017.10.074⟩.
