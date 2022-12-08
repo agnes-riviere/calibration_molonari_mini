@@ -176,7 +176,7 @@ Figure 2 - Experimental setup for voltage-temperature calibration at constant lo
 
 
 
-# 5.  Following the voltage-temperature calibration
+### Data record
 1. Fill in the sensor monitoring file Suivi_capteurs\_pression.xlsx,
 2.  In the tab calibrations, fill the type of calibration carried out for the sensor;
 3.  In the tab corresponding to the calibrated sensor, report the details of the calibrations and possibly the anomalies found during the recordings.
