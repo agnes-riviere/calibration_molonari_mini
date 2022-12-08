@@ -20,7 +20,7 @@ The experiment's data are then incorporated into the calibration_molonari_mini/d
 **It is important to follow the steps precisely to allow for efficient data processing afterwards.
 
 **
-# 3. **Voltage - Pressure Differential Calibration
+# 3. Voltage - Pressure Differential Calibration
 On a calibration ramp, the voltage-differential pressure calibration is carried out. It involves defining the relationship between measured voltage and differential pressure for constant temperature.
 
 
@@ -70,20 +70,20 @@ Before starting the calibration, make sure that the recording of temperatures an
 2. Wait for the voltage measured by the pressure sensor to stabilize (this voltage is displayed in the Device Status window). Then transfer it to the fourth column.
 3. Add water to the left-hand column. 
 4. Repeat from point 1.
-5. As long as the voltage sensor has not reached saturation, repeat these steps every 5 mm between 0 and 5 cm, every 1 cm between 5 and 15 cm, and finally every 5 cm between 15 cm. 6. Follow these same instructions on the opposite side to calibrate the device from tablecloth to river and from river to tablecloth. Change "left" to "right" in point b after the sensor has reached saturation, then repeat the change until you reach the second plateau of saturation. Create an Excel graph that plots the measured voltage against the difference in water height after a few points have been made (column D against column C). As you proceed, use this graph to make sure the points are plotted in a straight line.
-
-
+5. As long as the voltage sensor has not reached saturation, repeat these steps every 5 mm between 0 and 5 cm, every 1 cm between 5 and 15 cm, and finally every 5 cm between 15 cm. 
+6. Follow these same instructions on the opposite side to calibrate the device from tablecloth to river and from river to tablecloth. Change "left" to "right" in point b after the sensor has reached saturation, then repeat the change until you reach the second plateau of saturation. Create an Excel graph that plots the measured voltage against the difference in water height after a few points have been made (column D against column C). As you proceed, use this graph to make sure the points are plotted in a straight line.
 7. At the end of the calibration
   a. Verify that the recording has been stopped before removing it from the hobo dataloger (Device > sate). Save the Hobo recordings as a.hobo file in the same calibration LOMOS mini/data/1 raw data/ [sensorName] folder as the Excel calibration file. The file should be named [sensorname] calibUH.hobo. On the pressure sensor, a tape with the sensor's name is visible (not on the box containing it).
   
   b. Export the hobo's data measurements to a csv file. To do this:
   
-  b1. Open the Hobo file with Hoboware with File > Open data file
+  * Open the Hobo file with Hoboware with File > Open data file
  
- b2. Export by doing File > Export Table Data, click on Export, and select "csv" as file type. Keep the same name as the hobo file.
+ *Export by doing File > Export Table Data, click on Export, and select "csv" as file type. Keep the same name as the hobo file.
  
  c. Update the  Excel file by adding the date of the experiment and the person's name.
  d.The corresponding sensor folder should now contain the Excel calibration file and the Hobo csv file.
+ 
 # 4. Voltage-temperature calibration
 
  At constant differential pressure, the relationship between measured voltage and temperature variation is established using voltage-temperature calibrations. A climatic chamber calibration method and an outdoor calibration method have both been developed. The two paragraphs that follow provide descriptions of them. The method used in the climate chamber is preferred because it enables temperature control of the surrounding air.
@@ -94,8 +94,6 @@ In comparison to calibration outside, the climatic chamber offers the advantage 
 
 
 **Important note:** Prepare the device the day before, measure the water heights, and start the environmental chamber only the next day to prevent the first experiment from being invalidated because the pipes are deformed.
-
-
 
 
 ### Required equipment
@@ -109,7 +107,7 @@ In comparison to calibration outside, the climatic chamber offers the advantage 
 * Two pieces of pipe with a diameter of 16 mm and a length of approximately 20 cm;
  ### Experimental protocol
 
- #### Preparation**
+ #### Preparation
 
 1. Copy the template file (data / 1\_raw\_data / modele / pxxx\_YYYY-mm-dd\_UTxxxxxxxx\_chart.xlsx) into the corresponding sensor folder (data / 1\_raw\_data / pxxx\_YYYY-mm-dd\_calibUH / pxxx\_YYYY-mm-dd\_UTChambre\_rampe\_chart).
 2. Change the name file (eg. p509\_2016-07-08\_UTChambre\_rampe\_tableauDeBord).
@@ -121,37 +119,27 @@ In comparison to calibration outside, the climatic chamber offers the advantage 
 8. Complete the date and name fields.
 9.Close the climate chamber and run the program to decrease the temperature from 25 to 5 °C over  six hours, followed by an increase from 5 to 25 °C over six hours.
 10. Collect the data
-
-
-  a.  Before moving the sensors, measure the water levels in the tubes when the environmental chamber is opened and add them to the Excel table. If the heights have changed substantially, repeat the experiment. otherwise, keep reading:
+* Before moving the sensors, measure the water levels in the tubes when the environmental chamber is opened and add them to the Excel table. If the heights have changed substantially, repeat the experiment. otherwise, keep reading:
  
-  b.Verify that the recording has concluded prior to removing the file . Save the Hobo recordings in the same folder as the Excel calibration file as a.hobo file on the field computer: *data / 1\ raw\ data / [sensorName]*. 
+* Verify that the recording has concluded prior to removing the file . Save the Hobo recordings in the same folder as the Excel calibration file as a.hobo file on the field computer: *data / 1\ raw\ data / [sensorName]*. 
   
-  c. The file should be named [sensorname] calibUT [experiment number].hobo. The experiment number is indicated on the Excel sheet.
-
-
-
-
-d.Export the data measured by the hobo to a csv file. To do this:
+* The file should be named [sensorname] calibUT [experiment number].hobo. The experiment number is indicated on the Excel sheet.
+* Export the data measured by the hobo to a csv file. To do this:
   
- e. Open the hobo file using File > Open Data File in Hoboware software
-  
-  f. Export by selecting File > Export Table Data, clicking Export, and selecting CSV as the file format. Maintain the same filename as the hobo file.
-  
-  i.  Update the Excel file *Update the Excel spreadsheet *etalCapteursPress tableauDeBord* by including the experiment date.
-  
+* Open the hobo file using File > Open Data File in Hoboware software
+* Export by selecting File > Export Table Data, clicking Export, and selecting CSV as the file format. Maintain the same filename as the hobo file.
+* Update the Excel file *Update the Excel spreadsheet *etalCapteursPress tableauDeBord* by including the experiment date.
   
 11.Repeat these procedures for the two additional pressure differentials.
 
 When all 3 experiments have been completed, proceed to the steps in REF 4.3.
- ## 4.2. **Outdoor calibration
+
+ ## 4.2. Outdoor calibration
 To benefit from the differences in temperature between day and night, calibration is carried out outside. Each calibration has a desired load differential value (deviating from this target value by a few mm is not a problem, see 1.e). The Excel document contains the target values.*etalCapteursPress\_tableauDeBord*.
 
 ### Time needed
 
 2 to 2:30 hours. It is more efficient to perform multiple calibrations simultaneously; the preparation of the equipment takes the most time.
-
-
 
 
 ### Experimental protocol
@@ -166,21 +154,15 @@ To benefit from the differences in temperature between day and night, calibratio
 8. Examine the battery capacity of the Hobo datalogger. If the battery is less than 80% charged, the battery or Hobo should be replaced.
 9. Link Hobo to the pressure sensor. Channel 1 is pressure, channel 2 is temperature. 
 10. From the Hoboware software, launch the pressure and temperature recording. To do this, go to Peripherals > Launch. Channel 1 is the pressure (Stereo cable 0-2.5V), channel 2 is the temperature . Uncheck channels 3 and 4. Select a *time step of **15 minutes*** for recording.
-
-
 11. Disconnect the Hobo datalogger from the computer and place the pressure sensor + Hobo device outsidel, according to Figure 2. 
 12. Fill in the water level in each of the tubes until you reach a difference approximately equal to the target value indicated in the Excel document *etalCapteursPress\_tableDeBord*. 
-
 13. Complete the Excel document *etalCapteursPress\_tableauDeBord*
-
 Leave the recording for <b>3-4 days</b>.
 
 14. Recovery of registration
 * Turn on the field computer and open the Hoboware application.
  * Connect the Hobo to the computer.
 * Pull recording from hobo (Device > Playback), confirming stop recording. Save Hobo recordings on the field computer in a .hobo file, in the same folder as the calibration Excel file: *data/1\_raw\_data/[sensorname]*. Name the file *[sensor name]\_caliBUT\_[experiment number].hobo*. .
-
-
   * Export the data measured by the hobo to a csv file. To do this:
     * Open the hobo file with Hoboware with File > Open a data file
     * Export by doing File > Export Table Data, click on Export, and select "csv" as file type. Keep the same name as the hobo file.
