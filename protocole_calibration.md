@@ -90,7 +90,7 @@ Before starting the calibration, make sure that the recording of temperatures an
 
 ***The metadata related to each U-T calibration must be reported in an Excel dashboard.** A reference version named pxxx\_YYYY-mm-dd\_UTxxxxxxxx\_Dashboard is available in the folder 1\_raw\_data/modele. Replace the first field of xxx by the corresponding sensor number, the field YYYY-mm-dd by the start date of the experiment, and the last field xxxxx by "room" or "outside".
 
- ## 4.1. Calibration in the climatic chamber
+## 4.1. Calibration in the climatic chamber
 In comparison to calibration outside, the climatic chamber offers the advantage of being able to control the ambient temperature; however, while operating, the climatic chamber vibrates and muffles the measured voltage signal.
 
 
@@ -135,7 +135,7 @@ In comparison to calibration outside, the climatic chamber offers the advantage 
 
 When all 3 experiments have been completed, proceed to the steps in REF 4.3.
 
- ## 4.2. Outdoor calibration
+## 4.2. Outdoor calibration
 To benefit from the differences in temperature between day and night, calibration is carried out outside. Each calibration has a desired load differential value (deviating from this target value by a few mm is not a problem, see 1.e). The Excel document contains the target values.*etalCapteursPress\_tableauDeBord*.
 
 ### Time needed
@@ -184,7 +184,7 @@ Figure 2 - Experimental setup for voltage-temperature calibration at constant lo
  * the .hobo files of the recordings ;
   * the Excel file for the dashboard with the 1st tab completely filled in.
 
-# 6. Data formatting
+# 5. Data formatting
 For both types of calibration (voltage-differential charge and voltage-temperature), the recordings are contained in hobo files. They must therefore be converted into csv files that can be read by the R scripts.
 
 1. In Hoboware, do File > Export Table Data ... Save the csv in the same folder as the corresponding hobo file, and keep the same file name (only the extension changes from .hobo to .csv).
@@ -211,7 +211,7 @@ Figure 4 - Transfer of hydraulic head differentials for each U-T record on the f
 ![](Aspose.Words.b00ec4d5-1e5d-479a-9442-4939d53b6ee2.005.png)
 
 Figure 5 - Example of the files corresponding to the climate chamber experiment at the end of the steps in paragraph 5.1. The files read by the script R 1\_rawToFormatted.R is the set of csv files.
-# 7. **Manual pre-processing**
+# 6. Manual pre-processing
 At the end of the script 1\_rawToFormatted.R all the data are saved in the folder 2\_data\_formatted, in a homogenized form. It is now possible to make some modifications to the data, if necessary. Several types of modifications can be considered:
 
 The problematic portion of the record can be manually removed, or the record can be truncated if there is a problem. Plots created with 0 plot raw.R is intended to assist with this step. 
