@@ -89,7 +89,8 @@ Before starting the calibration, make sure that the recording of temperatures an
  At constant differential pressure, the relationship between measured voltage and temperature variation is established using voltage-temperature calibrations. A climatic chamber calibration method and an outdoor calibration method have both been developed. The two paragraphs that follow provide descriptions of them. The method used in the climate chamber is preferred because it enables temperature control of the surrounding air.
 
 ***The metadata related to each U-T calibration must be reported in an Excel dashboard.** A reference version named pxxx\_YYYY-mm-dd\_UTxxxxxxxx\_Dashboard is available in the folder 1\_raw\_data/modele. Replace the first field of xxx by the corresponding sensor number, the field YYYY-mm-dd by the start date of the experiment, and the last field xxxxx by "room" or "outside".
- ## 4.1. **Calibration in the climatic chamber
+
+ ## 4.1. Calibration in the climatic chamber
 In comparison to calibration outside, the climatic chamber offers the advantage of being able to control the ambient temperature; however, while operating, the climatic chamber vibrates and muffles the measured voltage signal.
 
 
@@ -183,7 +184,7 @@ Figure 2 - Experimental setup for voltage-temperature calibration at constant lo
  * the .hobo files of the recordings ;
   * the Excel file for the dashboard with the 1st tab completely filled in.
 
-# 7. **Data formatting
+# 6. Data formatting
 For both types of calibration (voltage-differential charge and voltage-temperature), the recordings are contained in hobo files. They must therefore be converted into csv files that can be read by the R scripts.
 
 1. In Hoboware, do File > Export Table Data ... Save the csv in the same folder as the corresponding hobo file, and keep the same file name (only the extension changes from .hobo to .csv).
@@ -219,4 +220,5 @@ The problematic portion of the record can be manually removed, or the record can
 Filter the climate chamber signal that was captured. For each temperature slope, a linear regression of the recorded voltage is computed. The linear regression function in the script 2 filterClimaticChamber can be used. The file names end with "flt.csv" after this step. 5. Correct the offset offsets between the U-T curves and the U-H calibration curve.
 
 
-# 8. Calculation of Calibration Curves R scripts then process the data gathered during the calibrations described above to determine the relationship between the measured voltage, the applied differential load, and the temperature. The [README.md](README.md) provides information on the various processing steps. This paragraph goes into detail about the recordings' post-processing. All of the files pertaining to the calibration of the sensors can be found in the calibration folder. The raw data are saved in the calibration/data/1 raw data folder, as was previously mentioned. The scripts are in the calibration/scripts R directory.
+# 7. Calculation of Calibration Curve
+R scripts then process the data gathered during the calibrations described above to determine the relationship between the measured voltage, the applied differential load, and the temperature. The [README.md](README.md) provides information on the various processing steps. This paragraph goes into detail about the recordings' post-processing. All of the files pertaining to the calibration of the sensors can be found in the calibration folder. The raw data are saved in the calibration/data/1 raw data folder, as was previously mentioned. The scripts are in the calibration/scripts R directory.
